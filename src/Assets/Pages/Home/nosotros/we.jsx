@@ -1,8 +1,8 @@
 import Header from "../../Header/Header";
-import "./Home.css";
+import "./we.css";
 import Earth3d from "../../modelo3D/modelo/Tierra3d";
 
-const Home = () => {
+const We = () => {
   return (
     <>
       <Header />
@@ -46,4 +46,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default We;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import './Background.css';
-import Header from '../../../../../components/Header/Header';
+import '../css/Background.css';
+//import Header from '../../../../../components/Header/Header';
 
 const Background = () => {
     useEffect(() => {

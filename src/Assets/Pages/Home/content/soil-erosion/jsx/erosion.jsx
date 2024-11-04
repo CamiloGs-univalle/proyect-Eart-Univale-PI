@@ -1,5 +1,5 @@
-import Header from "../../../../components/Header/Header";
-import "./erosion.css";
+import Header from "../../../../Header/Header";
+import "../css/erosion.css";
 import Background from "./Background";
 
 const Erosion = () => {
