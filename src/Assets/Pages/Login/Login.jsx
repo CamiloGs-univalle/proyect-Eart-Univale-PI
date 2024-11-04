@@ -4,10 +4,10 @@ import "../css/Login.css";
 import { useCallback, useEffect } from "react";
 
 // Importamos el hook personalizado que maneja el estado de autenticación
-import useAuthStore from "../../../../Stores/use-auth-store";
+import useAuthStore from "../../../Stores/use-auth-store";
 
 // Importamos el DAO de usuarios que permite interactuar con la base de datos de usuarios
-import UserDAO from "../../../DAO/UserDaAO";
+import UserDAO from "../../DAO/UserDaAO";
 
 // Importamos el hook para la navegación entre rutas en React
 import { useNavigate } from "react-router-dom";
