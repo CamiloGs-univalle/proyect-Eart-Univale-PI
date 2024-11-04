@@ -39,13 +39,9 @@ const Header = () => {
                 </div>
               </li>
             </div>
-
-            <div id="nosotros">
-              <li className="dropdown">
+            <li className="dropdown">
                 <Link to="/we" className="dropbtn">nosotros</Link>
               </li>
-            </div>
-
             
           </ul>
         </nav>
