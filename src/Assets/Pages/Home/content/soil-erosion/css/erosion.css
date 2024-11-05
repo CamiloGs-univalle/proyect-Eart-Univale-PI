@@ -82,14 +82,15 @@
 }
 
 .tierragrieta{
-    position: fixed;
-    width: 35vw;
-    height: 55vh;
-    left: auto; /* Alinea automáticamente */
+    background-color: #A6998A;
+    position: relative;
+    width: 34vw;
+    height: 60vh;
+    left: 1200px;
     right: 100px; 
     top: 300px;
-    justify-content: center;
-    align-items: center;
+    
+    
     overflow: hidden;
 }
 
