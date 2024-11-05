@@ -5,6 +5,19 @@
     box-sizing: border-box;
 }
 
+
+.title-earth{
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 4vw;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    top: 120px;
+    
+}
+
 /* Estilo del contenedor principal */
 .containerhome {
     display: flex;
@@ -12,24 +25,31 @@
     align-items: flex-start;
     color: #000;
     margin: 50px auto;
-    padding: 20px;  
+    padding: 50px;  
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.13);
     border-radius: 10px;
     width: 90%;
+    height: 100;
     overflow: hidden;
     text-align: center;
+    position: relative;
+    top: 150px;
 }
 
 .container-home {
     display: flex;
     justify-content: space-between;
     color: #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1vw;
     background-color: #eee;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    height: 240px;
+    border-radius: 15px;
+    height: 400px;
     width: 90%;
-    border: 2px solid black;
+    border: 4px solid black;
     overflow: hidden;
     text-align: center;
 }
@@ -135,7 +155,9 @@ h1, p {
 .text-container {
     flex: 1;
     overflow-y: auto;
-    padding-right: 20px; /* Espacio entre el texto y la escena 3D */
+    padding-right: 10px; /* Espacio entre el texto y la escena 3D */
+    height: 480px;
+    
 }
 
 /* Ajuste para el contenedor de la escena 3D */

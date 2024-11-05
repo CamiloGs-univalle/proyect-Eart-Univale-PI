@@ -1,8 +1,8 @@
 
 import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
 import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
-import "./Earth3d.css"; // Importa los estilos para el componente desde Recycling.css
-import Tierra3d from "../../modelo/Tierra3d";
+
+import Tierra3d from "./Tierra3d";
 // Definición del componente funcional RecyCling
 const Earth3d = () => {
   return (
