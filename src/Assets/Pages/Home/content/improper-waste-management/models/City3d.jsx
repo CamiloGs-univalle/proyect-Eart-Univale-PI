@@ -6,7 +6,7 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function City3d(props) {
-  const { nodes, materials } = useGLTF('model3D/city.glb')
+  const { nodes, materials } = useGLTF('/model3D/city.glb')
   return (
     <group {...props} dispose={null}>
       <group name="Scene">  
@@ -165,7 +165,9 @@ export function City3d(props) {
   )
 }  
 
+
+useGLTF.preload('/model3D/city.glb')
 export default City3d;
 
-useGLTF.preload('model3D/city.glb')
+
 

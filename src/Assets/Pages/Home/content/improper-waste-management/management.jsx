@@ -1,10 +1,10 @@
 import Header from "../../../Header/Header";
 import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
 import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
-
 import "./management.css";
+import City3d from "./models/City3d";
 
-const Management = () => {
+const Management = () => { 
     return (
         <>
             <Header />
@@ -38,7 +38,9 @@ const Management = () => {
                     />
 
                     {/* Renderiza el modelo de la ciudad */}
+                    <City3d />
                     
+            
                 </Canvas>
             </div>
         </>
