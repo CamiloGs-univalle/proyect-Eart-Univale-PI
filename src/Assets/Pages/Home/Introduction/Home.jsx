@@ -1,29 +1,24 @@
 import Header from "../../Header/Header";
 import "./Home.css";
-import Earth3d from "../../modelo3D/modelo/Tierra3d";
+import Earth3d from "./models/Earth3d";
 
 const Home = () => {
   return (
     <>
       <Header />
-      <h1>Bienvenidos a Land World</h1>
+      <h1 className="title-earth">Tierra</h1>
       <div className="containerhome">
-
+        <Earth3d className="container-3d-tierra" />
         <div className="container-home">
           <div className="text-container">
             <p>
-              La Tierra, nuestro hogar compartido, está enfrentando múltiples desafíos ambientales
-              que afectan la vida tal como la conocemos. Entre estos, la deforestación, la erosión
-              del suelo y la pérdida de biodiversidad son tres de las mayores amenazas que ponen en
-              peligro la estabilidad de nuestros ecosistemas. Estas problemáticas, impulsadas en gran
-              medida por las actividades humanas, no solo degradan el medio ambiente, sino que también
-              comprometen la capacidad de futuras generaciones para disfrutar de un planeta saludable.
-              Además, el manejo inadecuado de residuos se ha convertido en un problema global que agrava
-              la situación. Los residuos mal gestionados contaminan ríos, mares y tierras, y contribuyen
-              a la destrucción de hábitats naturales y al deterioro de la calidad de vida de muchas comunidades.
-              En esta página, exploraremos cómo estos factores están interconectados, analizaremos sus causas,
-              consecuencias y, lo más importante, ofreceremos soluciones prácticas que podemos adoptar para mitigar
-              su impacto. Nuestro planeta aún tiene la capacidad de regenerarse, pero depende de nosotros tomar acción inmediata para protegerlo.
+            La Tierra enfrenta graves desafíos ambientales, como la deforestación, la erosión del suelo 
+            y la pérdida de biodiversidad, en gran parte causados por actividades humanas. Estos problemas 
+            no solo dañan el medio ambiente, sino que también amenazan el bienestar de las futuras generaciones. 
+            Además, el manejo inadecuado de residuos contamina ecosistemas y afecta la calidad de vida en muchas 
+            comunidades. Esta página explora cómo estos problemas están conectados, analiza sus causas y 
+            consecuencias, y propone soluciones prácticas para reducir su impacto. Aunque el planeta aún puede 
+            regenerarse, es esencial que tomemos medidas ahora para protegerlo.
             </p>
             <button className="btn">
               <div className="wrapper">

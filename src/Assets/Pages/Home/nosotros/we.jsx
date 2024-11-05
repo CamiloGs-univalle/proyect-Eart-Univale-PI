@@ -1,6 +1,6 @@
 import Header from "../../Header/Header";
 import "./we.css";
-import Earth3d from "../../modelo3D/modelo/Tierra3d";
+
 
 const We = () => {
   return (
