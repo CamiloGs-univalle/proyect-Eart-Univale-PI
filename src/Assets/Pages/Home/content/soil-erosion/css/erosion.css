@@ -81,6 +81,18 @@
     /* Animación de burbujas */
 }
 
+.tierragrieta{
+    position: fixed;
+    width: 35vw;
+    height: 55vh;
+    left: auto; /* Alinea automáticamente */
+    right: 100px; 
+    top: 300px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 @keyframes bubble {
     0% {
         transform: translateX(0) scale(1);
