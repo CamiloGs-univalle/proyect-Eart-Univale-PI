@@ -1,6 +1,9 @@
+import { Canvas } from "@react-three/fiber";
 import Header from "../../../../Header/Header";
 import "../css/erosion.css";
 import Background from "./Background";
+import { OrbitControls } from "@react-three/drei";
+import Tierrita3d from "../model/erosionmodel";
 
 const Erosion = () => {
     return (
@@ -8,6 +11,33 @@ const Erosion = () => {
             <Header />
             <div>
                 <Background />
+            </div>
+            <div className="tierragrieta">
+
+                <Canvas
+                    camera={{
+                        position: [15, 11, 10], // Posición inicial de la cámara para que el modelo se vea completo
+                        fov: 70, // Campo de visión (Field of View) de la cámara, 70 grados
+                    }}>
+
+                    {/* Controles para rotar y mover el modelo 3D */}
+                    <OrbitControls />
+
+                    {/* Luz ambiental para iluminar el modelo de manera uniforme */}
+                    <ambientLight intensity={0.5} />
+
+                    {/* Luz direccional con posición y sombras */}
+                    <directionalLight
+                        position={[10, 10, 5]} // Posición de la luz
+                        intensity={1}          // Intensidad de la luz
+                        castShadow              // Activar sombras
+                    />
+
+                    {/* Renderiza el modelo de la ciudad */}
+                    <Tierrita3d />
+
+                    
+                </Canvas>
             </div>
 
             <div className="erosion-container">

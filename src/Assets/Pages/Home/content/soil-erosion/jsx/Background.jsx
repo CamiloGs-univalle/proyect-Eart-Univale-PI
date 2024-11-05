@@ -45,7 +45,7 @@ const Background = () => {
                         width="450" height="500"
                         patternUnits="userSpaceOnUse"
                     >
-                        <image xlinkHref="https://res.cloudinary.com/alvov/image/upload/v1484667915/codepen-lighting-experiment_jxj0pq.jpg"></image>
+                        
                     </pattern>
                     <rect width="100%" height="100%"
                         fill="url(#pattern1)" filter="url(#light)"
