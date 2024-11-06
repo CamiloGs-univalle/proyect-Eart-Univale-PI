@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   { path: "/", element: <Navigate to="/login" replace /> },
   { path: "/login",element: <Login />,},
   { path: "/Introduction",element: <Home />,},
-  { path: "/Map",element: <Map />,},
+  { path: "/Map",element: <Map />,},  
   { path: "/soil-erosion",element: <Erosion />,},
   { path: "/deforestation",element: <Deforestation />,},
   { path: "/management",element: <Management />,},

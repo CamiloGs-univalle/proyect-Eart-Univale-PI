@@ -39,7 +39,7 @@ const Erosion = () => {
                         <directionalLight
                             position={[10, 15, 10]} // Posición de la luz
                             intensity={1.2} // Intensidad de la luz
-                            color="#ffddaa" // Color cálido para simular la luz del sol
+                            color="#ffddaa" // Color cálido para simular la luz del sol 
                             castShadow // Activar sombras
                             shadow-mapSize-width={1024} // Tamaño de la sombra para mayor detalle
                             shadow-mapSize-height={1024}
