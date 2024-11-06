@@ -6,22 +6,7 @@
     /* Color de fondo suave */
 }
 
-.erosion-item {
-    flex: 1;
-    min-width: 250px;
-    /* Ancho mínimo para cada contenedor */
-    max-width: calc(33.333% - 20px);
-    /* Ancho máximo para 3 elementos por fila con espacio entre ellos */
-    padding: 20px;
-    border: 2px solid #000;
-    /* Borde negro */
-    border-radius: 8px;
-    /* Bordes redondeados */
-    background-color: #fff;
-    /* Fondo blanco */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Sombra sutil */
-}
+
 
 /* Estilos para las secciones */
 .seccion {
@@ -37,6 +22,18 @@
     font-family: Arial, sans-serif;
     margin: 10px;
     color: #40211A;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.8vw;
+}
+
+.subtituloSeccion {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1vw;
+
 }
 
 .elementoLista {
@@ -44,22 +41,10 @@
     /* Espaciado entre elementos de la lista */
 }
 
-/* Estilos para la conclusión */
-.conclusion {
-    margin-top: 20px;
-    /* Espaciado arriba de la conclusión */
-    font-weight: bold;
-    /* Negrita para destacar la conclusión */
-    text-align: center;
-    /* Centrar el texto de conclusión */
+.erosion-container {
+    height: 1100px;
 }
 
-/* Estilos para las burbujas de fondo */
-.background {
-    position: relative;
-    overflow: hidden;
-    /* Ocultar burbujas fuera del contenedor */
-}
 
 .bubbles {
     position: absolute;
@@ -82,17 +67,43 @@
 }
 
 .tierragrieta{
+    border-radius: 400px;
     background-color: #A6998A;
     position: relative;
     width: 34vw;
     height: 60vh;
-    left: 1200px;
+    left: 150px;
     right: 100px; 
-    top: 300px;
+    top: 200px;
     
     
     overflow: hidden;
 }
+
+.info-box {
+    background-color: #f7f0be; /* Color de fondo similar al de la imagen */
+    color: #333; /* Color del texto */
+    padding: 20px; /* Espacio interno */
+    border-radius: 15px; /* Bordes redondeados */
+    border: 2px solid #8c6b23; /* Color y grosor del borde */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 40%; /* Ancho ajustable */   
+    height: 700px;
+    position: absolute;
+    right: 100px;
+    top: 1500px;
+    /*Fuente Chida*/
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3vw;
+}
+
+.info-box h3 {
+    margin-top: 20px;
+    color: #8c6b23; /* Color del título */
+}
+
 
 @keyframes bubble {
     0% {
