@@ -1,4 +1,9 @@
 /* Estilos generales para la sección de erosión en la página de inicio */
+body {
+    background-color: #D9D9D9;
+    
+}
+
 .home-erosion {
     color: #000000;
     max-width: 37vw; /* Limita el ancho máximo para evitar desbordamiento */
