@@ -16,8 +16,7 @@ const Header = () => {
     <div className="header">
       <header>
         <nav>
-          <ul>
-            {/* Cada <li> contiene un enlace a diferentes rutas usando el componente Link */}
+          <ul className="nav-left">
             <li>
               <Link to="/introduction">Inicio</Link>
             </li>
@@ -26,27 +25,27 @@ const Header = () => {
               <div className="dropdown-content">
                 <Link to="/soil-erosion">Erosión</Link>
                 <Link to="/management">Residuos</Link>
-                <Link to="/biodiversity">perdida</Link>
-                <Link to="/deforestation">deforestacion</Link>
+                <Link to="/biodiversity">Pérdida</Link>
+                <Link to="/deforestation">Deforestación</Link>
               </div>
             </li>
-            <div id="perfil">
-              <li className="dropdown">
-                <Link to="#profile" className="dropbtn">Perfil</Link>
-                <div className="dropdown-content">
-                  <Link to="/login">Mi perfil</Link>
-                  <Link to="#logout" onClick={handleLogout}>Cerrar sesión</Link>
-                </div>
-              </li>
-            </div>
+          </ul>
+          <ul className="nav-right">
             <li className="dropdown">
-                <Link to="/we" className="dropbtn">nosotros</Link>
-              </li>
-            
+              <Link to="#profile" className="dropbtn">Perfil</Link>
+              <div className="dropdown-content">
+                <Link to="/login">Mi perfil</Link>
+                <Link to="#logout" onClick={handleLogout}>Cerrar sesión</Link>
+              </div>
+            </li>
+            <li>
+              <Link to="/we" className="dropbtn">Nosotros</Link>
+            </li>
           </ul>
         </nav>
       </header>
     </div>
+
   );
 };
 
