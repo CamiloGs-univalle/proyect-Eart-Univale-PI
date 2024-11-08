@@ -162,5 +162,6 @@ h1, p {
 /* Ajuste para el contenedor de la escena 3D */
 .container-3d-tierra {
     flex: 1;
-    height: 270px;
+    height: auto;
+    width: auto;
 }
