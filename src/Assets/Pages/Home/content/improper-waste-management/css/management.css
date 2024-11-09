@@ -89,6 +89,7 @@ body {
     }   
 
     .ciudadcita {
+        position: relative;
         width: 50vw;
         height: 60vh;
         left: auto;
