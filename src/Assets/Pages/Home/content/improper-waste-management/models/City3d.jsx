@@ -9,7 +9,7 @@ export function City3d(props) {
   const { nodes, materials } = useGLTF('/model3D/city.glb')
   return (
     <group {...props} dispose={null}>
-      <group name="Scene">  
+      <group name="Scene">
         <mesh
           name="Bottels2"
           castShadow
@@ -152,6 +152,7 @@ export function City3d(props) {
           material={materials.WasteMaterial}
           userData={{ name: 'WasteBasket3' }}
         />
+
         <mesh
           name="WasteBasket4"
           castShadow
@@ -163,7 +164,7 @@ export function City3d(props) {
       </group>
     </group>
   )
-}  
+}
 
 
 useGLTF.preload('/model3D/city.glb')
