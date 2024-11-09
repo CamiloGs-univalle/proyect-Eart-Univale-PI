@@ -11,7 +11,7 @@ const Home = () => {
         <Earth3d className="container-3d-tierra" />
         <div className="container-home">
           <div className="text-container">
-            <p>
+            <p style={{ color: "#404040" }}>
             La Tierra enfrenta graves desafíos ambientales, como la deforestación, la erosión del suelo 
             y la pérdida de biodiversidad, en gran parte causados por actividades humanas. Estos problemas 
             no solo dañan el medio ambiente, sino que también amenazan el bienestar de las futuras generaciones. 

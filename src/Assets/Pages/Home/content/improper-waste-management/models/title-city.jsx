@@ -1,5 +1,5 @@
 import { Html } from "@react-three/drei"
-
+import "../css/title3d.css"
 
 
 const Citytext = () => {
@@ -8,16 +8,17 @@ const Citytext = () => {
             <Html
                 occlude
                 center
-                style={
-                    {
-                        color:"purple"
-                    }
-                }
+                className="titlecity"
                 distanceFactor={10}
                 transform
                 position={[0, 10, 0]}
-                font="/fonts/basic_sans_serif_7.ttf"
                 
+                style={
+                    {
+                        color: "#8C695D",
+                        fontSize: "10pt"
+                    }
+                }
             >
                 <h1>Bienvenidos a una ciudad victima del mal manejo de reciduos</h1>
             </Html>
