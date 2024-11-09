@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center; /* Centra horizontalmente */
     top: 120px;
+    color: #8C695D;
     
 }
 
@@ -57,6 +58,7 @@
 h1, p {
     margin: 2%;
     text-align: center;
+    color: #404040;
 }
 
 .btn {

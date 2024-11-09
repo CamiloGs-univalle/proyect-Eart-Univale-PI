@@ -25,8 +25,8 @@ const Erosion = () => {
                     <Canvas
                         shadows // Activa las sombras en el lienzo
                         camera={{
-                            position: [15, 11, 10], // Posición inicial de la cámara
-                            fov: 70, // Campo de visión de la cámara
+                            position: [15, 10, 5], // Posición inicial de la cámara
+                            fov: 40, // Campo de visión de la cámara
                         }}
                     >
                         {/* Controles para rotar y mover el modelo 3D */}
