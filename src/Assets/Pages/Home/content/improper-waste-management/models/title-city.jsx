@@ -1,5 +1,5 @@
 import { Html } from "@react-three/drei"
-import "../css/title3d.css"
+
 
 
 const Citytext = () => {
@@ -8,7 +8,9 @@ const Citytext = () => {
             <Html
                 occlude
                 center
-                className="titlecity"
+
+
+
                 distanceFactor={10}
                 transform
                 position={[0, 10, 0]}
