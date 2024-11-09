@@ -12,7 +12,7 @@ const Earth3d = () => {
         {/* Canvas que actúa como el área para renderizar el contenido 3D */}
         <Canvas
           camera={{
-            position: [0, 0, 2], // Posición inicial de la cámara para que el modelo se vea completo
+            position: [0, 0, 1.8], // Posición inicial de la cámara para que el modelo se vea completo
             fov: 70, // Campo de visión (Field of View) de la cámara, 70 grados
           }}>
           
