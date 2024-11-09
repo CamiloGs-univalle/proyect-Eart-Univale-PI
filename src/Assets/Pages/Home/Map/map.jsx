@@ -1,7 +1,6 @@
 import Header from "../../Header/Header";
 import "./map.css";
 import Map3D from "./model3D/map3D";
-import Soil3d from "./model3D/soil3d";
 
 
 
