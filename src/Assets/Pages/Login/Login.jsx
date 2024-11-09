@@ -73,7 +73,8 @@ export default function Login() {
                                 ¡ Bienvenido {user.displayName} ! {/* Muestra el nombre del usuario */}
                             </p>
                             <p className="present-text"> {/* Texto de presentación */}
-                                Hola {user.displayName}, si deseas cerrar sesión, por favor presiona el botón verde
+                                Hola {user.displayName}, si deseas cerrar sesión, por favor ve a tu perfil y en el menu desplegable oreciona
+                                cerrar sesion 
                             </p>
 
 
