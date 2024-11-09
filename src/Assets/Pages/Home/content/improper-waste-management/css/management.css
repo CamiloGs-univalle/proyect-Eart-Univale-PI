@@ -8,10 +8,11 @@ body {
     color: #000000;
     max-width: 37vw; /* Limita el ancho máximo para evitar desbordamiento */
     padding: 5%;
-    background-color: #40211A;
+    background-color: #D2B48C;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 600px;
     position: relative;
+    user-select: none;
 
     right: 450px;
     top: 100px;
@@ -23,13 +24,13 @@ body {
 .tituloPrincipal {
     text-align: center;
     margin-top: 2rem;
-    color: #D9D9D9;
+    color: #404040;
     animation: tituloPrincipalAnimacion 1s ease-in-out;
 }
 
 /* Estilos para el título en .title-text */
 .title-text {
-    color: #3F7417;
+    color: #8C695D ;
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-style: italic;
