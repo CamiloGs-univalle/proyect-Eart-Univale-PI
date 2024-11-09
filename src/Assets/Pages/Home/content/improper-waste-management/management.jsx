@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que
 import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
 import "./css/management.css";
 import City3d from "./models/City3d";
-import Citytextito from "./models/title-city";
+import Citytext from "./models/title-city";
 
 const Management = () => {
     return (
@@ -22,8 +22,8 @@ const Management = () => {
                 <Canvas
                     shadows // Activa el renderizado de sombras en el Canvas
                     camera={{
-                        position: [1, 15, 40], // Posición inicial de la cámara
-                        fov: 30, // Campo de visión de la cámara
+                        position: [1, 15, 40], // Posición de la cámara
+                        fov: 30,               // Campo de visión de la cámara
                     }}
                 >
                     {/* Controles para rotar y mover el modelo 3D */}
@@ -32,14 +32,14 @@ const Management = () => {
                     {/* Luz ambiental para iluminar el modelo de manera uniforme */}
                     <ambientLight intensity={0.4} />
 
-                    {/* Luz direccional con sombras activadas */}
+                    {/* Luz direccional fija con sombras activadas */}
                     <directionalLight
-                        position={[15, 20, 10]} // Ajuste de la posición para mejor iluminación
-                        intensity={1.2}         // Aumenta la intensidad de la luz
-                        castShadow              // Activa las sombras para esta luz
-                        shadow-mapSize-width={1024} // Aumenta la resolución de las sombras
+                        position={[15, 20, 10]}       // Posición fija de la luz
+                        intensity={1.2}               // Intensidad de la luz
+                        castShadow                    // Activa las sombras
+                        shadow-mapSize-width={1024}   // Mayor resolución para sombras
                         shadow-mapSize-height={1024}
-                        shadow-camera-far={50}      // Ajuste de la distancia de renderizado de sombras
+                        shadow-camera-far={50}
                         shadow-camera-left={-20}
                         shadow-camera-right={20}
                         shadow-camera-top={20}
@@ -47,10 +47,11 @@ const Management = () => {
                     />
 
                     {/* Renderiza el modelo de la ciudad con sombras activadas */}
-                    <City3d castShadow receiveShadow />
-                    <Citytextito />
+                    <City3d castShadow receiveShadow /> {/* Activa sombras en el modelo */}
+                    <Citytext />
 
                 </Canvas>
+
 
             </div>
         </>
