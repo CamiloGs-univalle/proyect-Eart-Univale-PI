@@ -14,39 +14,38 @@ const Header = () => {
   return (
     // Contenedor principal con la clase "header"
     <div className="header">
-      <header>
-        <nav>
-          <ul>
-            {/* Cada <li> contiene un enlace a diferentes rutas usando el componente Link */}
-            <li>
-              <Link to="/introduction">Inicio</Link>
-            </li>
-            <li className="dropdown">
-              <Link to="/Map" className="dropbtn">Mapa</Link>
-              <div className="dropdown-content">
-                <Link to="/soil-erosion">Erosión</Link>
-                <Link to="/management">Residuos</Link>
-                <Link to="/biodiversity">perdida</Link>
-                <Link to="/deforestation">deforestacion</Link>
-              </div>
-            </li>
-            <div id="perfil">
-              <li className="dropdown">
-                <Link to="#profile" className="dropbtn">Perfil</Link>
-                <div className="dropdown-content">
-                  <Link to="/login">Mi perfil</Link>
-                  <Link to="#logout" onClick={handleLogout}>Cerrar sesión</Link>
-                </div>
-              </li>
-            </div>
-            <li className="dropdown">
-                <Link to="/we" className="dropbtn">nosotros</Link>
-              </li>
-            
-          </ul>
-        </nav>
-      </header>
-    </div>
+  <header>
+    <nav>
+      <ul className="nav-left">
+        <li>
+          <Link to="/introduction">Inicio</Link>
+        </li>
+        <li className="dropdown">
+          <Link to="/Map" className="dropbtn">Mapa</Link>
+          <div className="dropdown-content">
+            <Link to="/soil-erosion">Erosión</Link>
+            <Link to="/management">Residuos</Link>
+            <Link to="/biodiversity">Pérdida</Link>
+            <Link to="/deforestation">Deforestación</Link>
+          </div>
+        </li>
+      </ul>
+      <ul className="nav-right">
+        <li className="dropdown">
+          <Link to="#profile" className="dropbtn">Perfil</Link>
+          <div className="dropdown-content">
+            <Link to="/login">Mi perfil</Link>
+            <Link to="#logout" onClick={handleLogout}>Cerrar sesión</Link>
+          </div>
+        </li>
+        <li>
+          <Link to="/we" className="dropbtn">Nosotros</Link>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
   );
 };
 
