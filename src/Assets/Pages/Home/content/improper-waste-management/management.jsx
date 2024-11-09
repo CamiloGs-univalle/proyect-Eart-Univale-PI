@@ -5,7 +5,7 @@ import "./css/management.css";
 import City3d from "./models/City3d";
 import Citytextito from "./models/title-city";
 
-const Management = () => { 
+const Management = () => {
     return (
         <>
             <Header />
@@ -20,31 +20,38 @@ const Management = () => {
 
             <div className="ciudadcita">
                 <Canvas
+                    shadows // Activa el renderizado de sombras en el Canvas
                     camera={{
-                        position: [15, 11, 10], // Posición inicial de la cámara para que el modelo se vea completo
-                        fov: 70, // Campo de visión (Field of View) de la cámara, 70 grados
-                    }}>
-
+                        position: [1, 15, 40], // Posición inicial de la cámara
+                        fov: 30, // Campo de visión de la cámara
+                    }}
+                >
                     {/* Controles para rotar y mover el modelo 3D */}
                     <OrbitControls />
 
                     {/* Luz ambiental para iluminar el modelo de manera uniforme */}
-                    <ambientLight intensity={0.5} />
+                    <ambientLight intensity={0.4} />
 
-                    {/* Luz direccional con posición y sombras */}
-                    <directionalLight 
-                        position={[10, 10, 5]} // Posición de la luz
-                        intensity={1}          // Intensidad de la luz
-                        castShadow              // Activar sombras
+                    {/* Luz direccional con sombras activadas */}
+                    <directionalLight
+                        position={[15, 20, 10]} // Ajuste de la posición para mejor iluminación
+                        intensity={1.2}         // Aumenta la intensidad de la luz
+                        castShadow              // Activa las sombras para esta luz
+                        shadow-mapSize-width={1024} // Aumenta la resolución de las sombras
+                        shadow-mapSize-height={1024}
+                        shadow-camera-far={50}      // Ajuste de la distancia de renderizado de sombras
+                        shadow-camera-left={-20}
+                        shadow-camera-right={20}
+                        shadow-camera-top={20}
+                        shadow-camera-bottom={-20}
                     />
 
-                    {/* Renderiza el modelo de la ciudad */}
-                    <City3d />
-                    <Citytextito/>
+                    {/* Renderiza el modelo de la ciudad con sombras activadas */}
+                    <City3d castShadow receiveShadow />
+                    <Citytextito />
 
-                    
-            
                 </Canvas>
+
             </div>
         </>
     );
