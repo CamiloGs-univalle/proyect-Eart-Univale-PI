@@ -17,7 +17,7 @@ const Citytext = () => {
                 
                 style={
                     {
-                        color: "#8C695D",
+                        color: "#a3877d",
                         fontSize: "10pt"
                     }
                 }
