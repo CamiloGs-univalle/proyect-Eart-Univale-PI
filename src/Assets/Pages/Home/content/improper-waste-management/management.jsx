@@ -1,6 +1,6 @@
 import Header from "../../../Header/Header";
 import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
-import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
+import { OrbitControls, useGLTF, Sky } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
 import "./css/management.css";
 import City3d from "./models/City3d";
 import Citytext from "./models/title-city";
@@ -44,6 +44,19 @@ const Management = () => {
                         shadow-camera-right={20}
                         shadow-camera-top={20}
                         shadow-camera-bottom={-20}
+                    />
+
+                    <Sky
+                        sunPosition={[0, -1, -1]} // Coloca el sol debajo del horizonte
+                        inclination={0.2} // Ajusta la inclinación para simular el atardecer
+                        azimuth={180} // Ajusta el ángulo de azimut para cambiar la dirección de la luz
+                        mieCoefficient={0.005} // Ajusta la dispersión atmosférica
+                        elevation={85} // Ajusta la elevación del sol
+                        mieDirectionalG={0.07} // Ajusta el brillo del sol
+                        rayleigh={3} // Ajusta la dispersión de Rayleigh
+                        turbidity={15} // Ajusta la claridad del cielo
+                        exposure={0.8} // Ajusta la exposición del cielo
+                        distance={50}
                     />
 
                     {/* Renderiza el modelo de la ciudad con sombras activadas */}
