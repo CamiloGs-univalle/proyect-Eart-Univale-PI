@@ -1,3 +1,13 @@
+.titulo{
+    color: #8C695D ;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 4vw;
+    position: relative;
+    text-align: center; /* Centrado para mejorar presentación */
+}
+
 .home-erosion {
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +26,6 @@
     align-items: flex-start;
     color: #000;
     margin: 50px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.13);
     padding: 1%;
     border-radius: 10px;
     height: auto;
@@ -38,7 +47,6 @@
     justify-content: center;  /* Cambiado de flex-start a center */
     font-size: 2.0em;
     font-family: Arial, sans-serif;
-    margin: 10px;
     color: #8C695D;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -58,11 +66,6 @@
     margin: 5px 0;
     /* Espaciado entre elementos de la lista */
 }
-
-.erosion-container {
-    height: 1100px;
-}
-
 
 .bubbles {
     position: absolute;
