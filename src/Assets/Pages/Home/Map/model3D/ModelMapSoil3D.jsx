@@ -1,15 +1,24 @@
 import { useGLTF } from "@react-three/drei"; // Importa la función useGLTF para cargar modelos 3D en formato GLTF
-
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 // Definición del componente funcional TrashCan
 const ModelMapSoil3D = (props) => {
-  // Desestructuración del objeto retornado por useGLTF, que contiene los nodos y materiales del modelo GLTF
-  const { nodes, materials } = useGLTF("/model3D/soil.glb"); // Carga el modelo 3D desde el archivo GLB ubicado en "modelo3D/earth.glb"
+  const { nodes, materials } = useGLTF("/model3D/soil.glb");
+  const soilRef = useRef();
+
+  // Hook para rotar el modelo continuamente
+  useFrame(() => {
+    if (soilRef.current) {
+      soilRef.current.rotation.y += 0.01; // Ajusta la velocidad de rotación si es necesario
+    }
+  });
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} ref={soilRef} dispose={null}>
+      {/* Resto de la estructura del modelo */}
       <group name="Sketchfab_Scene">
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
-          <group name="root">
+        <group name="root">
             <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
               <group name="leaves_0" position={[0.241, 1.772, 0]}>
                 <mesh
