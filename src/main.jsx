@@ -4,13 +4,13 @@ import "./index.css";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Login from './Assets/Pages/Login/Login';
 import Home from './Assets/Pages/Home/Introduction/Home';
-import Erosion from './Assets/Pages/Home/content/soil-erosion/jsx/erosion';
 import Page404 from './Assets/Pages/page-404/Page404';
 import Deforestation from './Assets/Pages/Home/content/Deforestation/deforestation';
 import Management from './Assets/Pages/Home/content/improper-waste-management/management';
 import Biodiversity from './Assets/Pages/Home/content/loss-of-biodiversity/biodiversity';
 import Map from './Assets/Pages/Home/Map/map';
 import We from './Assets/Pages/Home/nosotros/we';
+import Erosion from './Assets/Pages/Home/content/soil-erosion/erosion';
 
 
 
@@ -23,7 +23,6 @@ const router = createBrowserRouter([
   { path: "/deforestation",element: <Deforestation />,},
   { path: "/management",element: <Management />,},
   { path: "/biodiversity",element: <Biodiversity />,},
-
   { path: "/we",element: <We />,},
   { path: "*", element: <Page404 /> },
 
