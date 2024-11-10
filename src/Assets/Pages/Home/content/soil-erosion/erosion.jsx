@@ -6,6 +6,7 @@ const Erosion = () => {
     return (
         <>
             <Header />
+            <h1 className="titulo">Erosión del Suelo</h1>
             <div className="erosion-container">
                 <div>
                     <h3 className="tituloSeccion">¿Cómo se produce la erosión del suelo?</h3>
