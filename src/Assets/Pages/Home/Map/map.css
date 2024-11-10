@@ -1,21 +1,19 @@
-html, body, #root, .App {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-}
 
 .contenedormap {  
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    width: auto;
+    height: 570px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
 }
 
 .container-map3d {
-  width: 100%;
+  flex: 1;
   height: 100%;
 }
