@@ -23,19 +23,19 @@ export function ModelSoil3D(props) {
                   name="RUR_RUR_u1_v1_0"
                   geometry={nodes.RUR_RUR_u1_v1_0.geometry}
                   material={materials.RUR_u1_v1}
-                  onClick={(e) => handleClick(e, 'nuemro 1')}
+                  onClick={(e) => handleClick(e, 'Erosión por salpicadura: ocurre cuando gotas de lluvia golpean el suelo con fuerza suficiente como para desplazar partículas. ')}
                 />
                 <mesh
                   name="RUR_RUR_u2_v1_0"
                   geometry={nodes.RUR_RUR_u2_v1_0.geometry}
                   material={materials.RUR_u2_v1}
-                  onClick={(e) => handleClick(e, 'nuemro 2')}
+                  onClick={(e) => handleClick(e, 'Erosión en surcos: se forman pequeños canales en el suelo debido al flujo constante de agua.')}
                 />
                 <mesh
                   name="RUR_RUR_u1_v2_0"
                   geometry={nodes.RUR_RUR_u1_v2_0.geometry}
                   material={materials.RUR_u1_v2}
-                  onClick={(e) => handleClick(e, 'nuemro 3')}
+                  onClick={(e) => handleClick(e, 'Erosión en cárcavas: cuando los surcos se agrandan y forman barrancos o canales profundos en el terreno.')}
                 />
                 {clickedObject && clickedObject.position && (
                   <Html
