@@ -1,4 +1,5 @@
 import Header from "../../Header/Header";
+import Fondo from "./fondo";
 import "./Home.css";
 import Earth3d from "./models/Earth3d";
 import { Link } from "react-router-dom";
@@ -7,6 +8,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      <Fondo/>
       <h1 className="title-earth">Tierra</h1>
       <div className="containerhome">
         <Earth3d className="container-3d-tierra" />

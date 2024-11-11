@@ -116,7 +116,7 @@ const Erosion = () => {
                 </div>
 
                 <div className="conteiner">
-                <div class="info-box">
+                    <div class="info-box">
                         <p>La erosión del suelo es un proceso natural, pero en muchos casos
                             acelerado por la actividad humana, que implica la pérdida y desplazamiento
                             de la capa superior del suelo, esencial para la vida vegetal y la agricultura.
@@ -205,7 +205,7 @@ const Erosion = () => {
                         </div>
 
                     </div>
-                    
+
 
                 </div>
 
