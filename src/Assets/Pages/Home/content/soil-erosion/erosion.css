@@ -31,7 +31,12 @@
     height: auto;
     overflow: hidden;
     text-align: center;
-    position: relative;
+    position: absolute;
+    right: 10px;
+    width: 2000px; /* Ancho ajustable */ 
+    height: 68vh;  
+    
+    
 }
 
 
@@ -105,7 +110,8 @@
     border-radius: 15px; /* Bordes redondeados */
     border: 2px solid #8c6b23; /* Color y grosor del borde */
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    width: 40%; /* Ancho ajustable */   
+    width: 40%; /* Ancho ajustable */ 
+    height: 800px;  
     position: absolute;
     right: 5%;
     /*Fuente Chida*/
