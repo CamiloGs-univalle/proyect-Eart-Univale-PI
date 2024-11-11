@@ -28,6 +28,7 @@ nav ul li a {
 nav ul li a:hover {
   background-color: #8C695D;
   color: rgb(255, 255, 255);
+  border-bottom-right-radius: 35px;
 }
 
 /* Estilos para secciones del menú en el lado derecho */
@@ -39,9 +40,9 @@ nav ul li a:hover {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #A6998A;
+  min-width: 160px; 
+  border-bottom-right-radius: 35px;
   z-index: 1;
 }
 
