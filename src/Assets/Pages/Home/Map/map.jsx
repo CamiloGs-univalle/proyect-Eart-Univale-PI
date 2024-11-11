@@ -8,6 +8,7 @@ import ModelMapManagement3D from "./model3D/ModelMapManagement3D";
 import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
 import Text3DSoil from "./model3D/Text3DSoil";
 import { Canvas } from "@react-three/fiber";
+import Text3DManagement from "./model3D/Text3DManagement";
 
 const Map = () => {
   return (
@@ -33,12 +34,23 @@ const Map = () => {
               </group>
               {/* Modelo del suelo (giratorio) */}
 
+              <group position={[0, 20, 20]}>
+              <ModelMapManagement3D position={[0, 5, -10]} scale={[4, 4, 4]} />
+              <Text3DManagement/>
+              </group>
 
-              <ModelMapManagement3D position={[0, 20, 20]} scale={[1.8, 1.8, 1.8]} />
+              <group position={[20, 40, -30]}>
+              <ModelMapDeforestation3D position={[0, 0, -10]} scale={[4, 4, 4]} />
+              </group>
 
-              <ModelMapDeforestation3D position={[20, 40, -30]} scale={[4, 4, 4]} />
+              <group position={[70, 10, 20]}>
+              <ModelMapBiodiversity3D position={[0, 0, -10]} scale={[4, 4, 4]} />
+              </group>
+              
 
-              <ModelMapBiodiversity3D position={[70, 10, 20]} scale={[4, 4, 4]} />
+              
+
+              
 
 
               {/* Controles de cámara */}
