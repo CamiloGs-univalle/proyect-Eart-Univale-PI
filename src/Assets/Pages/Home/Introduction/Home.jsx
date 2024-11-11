@@ -1,6 +1,7 @@
 import Header from "../../Header/Header";
 import "./Home.css";
 import Earth3d from "./models/Earth3d";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
             </p>
             <button className="btn">
               <div className="wrapper">
-                <a href="/map" className="inicio">INICIAR PARTIDA</a>
+              <Link to="/map" className="inicio">INICIAR PARTIDA</Link>
                 {[...Array(6)].map((_, i) => (
                   <div className={`flower flower${i + 1}`} key={i}>
                     {[...Array(4)].map((_, j) => (
