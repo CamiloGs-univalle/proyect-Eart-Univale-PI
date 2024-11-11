@@ -8,9 +8,9 @@ import Page404 from './Assets/Pages/page-404/Page404';
 import Deforestation from './Assets/Pages/Home/content/Deforestation/deforestation';
 import Management from './Assets/Pages/Home/content/improper-waste-management/management';
 import Biodiversity from './Assets/Pages/Home/content/loss-of-biodiversity/biodiversity';
-import Map from './Assets/Pages/Home/Map/map';
 import We from './Assets/Pages/Home/nosotros/we';
 import Erosion from './Assets/Pages/Home/content/soil-erosion/erosion';
+import Map from './Assets/Pages/Home/Map/map';
 
 
 
