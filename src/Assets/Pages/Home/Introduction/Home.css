@@ -35,7 +35,6 @@
     overflow: hidden;
     text-align: center;
     position: relative;
-    z-index: 1;
 }
 
 .container-home {
