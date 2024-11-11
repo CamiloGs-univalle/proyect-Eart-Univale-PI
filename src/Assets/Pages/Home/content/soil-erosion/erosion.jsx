@@ -4,6 +4,7 @@ import { OrbitControls, useGLTF, Sky } from "@react-three/drei";
 import "./erosion.css";
 import Text3D from "./model/Text3D";
 import ModelSoil3D from "./model/ModelSoil3D"
+import Personsoil from "./model/personsoil";
 
 const Erosion = () => {
     return (
@@ -201,6 +202,7 @@ const Erosion = () => {
                                 {/* Renderiza el modelo */}
                                 <ModelSoil3D position={[0, -5, 0]} />
                                 <Text3D />
+                                <Personsoil/>
                             </Canvas>
                         </div>
 
