@@ -1,6 +1,9 @@
 import Header from "../../../Header/Header";
+import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
+import { OrbitControls, useGLTF, Sky } from "@react-three/drei";
 import "./erosion.css";
 import Soil3D from "./model/Soil3D";
+import Text3D from "./model/Text3D";
 
 const Erosion = () => {
     return (
@@ -22,6 +25,7 @@ const Erosion = () => {
                 <div className="conteiner">
                     <div>
                         <Soil3D className="tierragrieta" />
+                        
                     </div>
                     <div class="info-box">
                         <p>La erosión del suelo es un proceso natural, pero en muchos casos
