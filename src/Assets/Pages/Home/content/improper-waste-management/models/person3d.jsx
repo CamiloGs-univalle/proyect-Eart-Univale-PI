@@ -8,7 +8,7 @@ export function Person(props) {
   const { actions } = useAnimations(animations, group);
 
   // Estado para la posición del modelo
-  const [position, setPosition] = useState([0, 0, 0]);
+  const [position, setPosition] = useState([0, 0.4, 0]);
 
   // Manejo de eventos de teclado para mover el modelo
   const handleKeyDown = (event) => {

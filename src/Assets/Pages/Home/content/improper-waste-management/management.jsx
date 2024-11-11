@@ -23,9 +23,17 @@ const Management = () => {
                 <Canvas
                     shadows // Activa el renderizado de sombras en el Canvas
                     camera={{
-                        position: [1, 15, 40], // Posición de la cámara
+                        position: [5, 15, 50], // Posición de la cámara
                         fov: 30,               // Campo de visión de la cámara
                     }}
+
+                    style={
+                        {
+                            height: 1000,
+                            width: 1500,
+                            right: 270
+                        }
+                    }
                 >
                     {/* Controles para rotar y mover el modelo 3D */}
                     <OrbitControls />
