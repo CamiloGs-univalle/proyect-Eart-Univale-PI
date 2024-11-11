@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber"; // Importa el componente Canvas que sirve como contenedor para renderizar el contenido 3D
-import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
+import { OrbitControls, useGLTF, Sky } from "@react-three/drei"; // Importa OrbitControls para permitir el control del modelo con el ratón y useGLTF para cargar modelos GLTF
 import ModelSoil3D from "./ModelSoil3D";
+import Text3D from "./text3D";
 
 
 // Definición del componente funcional RecyCling
@@ -12,8 +13,8 @@ const Soil3D = () => {
                 <Canvas
                     shadows // Activa las sombras en el lienzo
                     camera={{
-                        position: [15, 20, 5], // Posición inicial de la cámara
-                        fov: 40, // Campo de visión de la cámara
+                        position: [0, 10, 50], // Posición inicial de la cámara
+                        fov: 20, // Campo de visión de la cámara
                     }}
                 >
                     {/* Controles para rotar y mover el modelo 3D */}
@@ -59,9 +60,22 @@ const Soil3D = () => {
                         color="#ffffff"
                         castShadow
                     />
+                    <Sky
+                        sunPosition={[0, -1, -1]} // Coloca el sol debajo del horizonte
+                        inclination={0.2} // Ajusta la inclinación para simular el atardecer
+                        azimuth={180} // Ajusta el ángulo de azimut para cambiar la dirección de la luz
+                        mieCoefficient={0.005} // Ajusta la dispersión atmosférica
+                        elevation={85} // Ajusta la elevación del sol
+                        mieDirectionalG={0.07} // Ajusta el brillo del sol
+                        rayleigh={3} // Ajusta la dispersión de Rayleigh
+                        turbidity={15} // Ajusta la claridad del cielo
+                        exposure={0.8} // Ajusta la exposición del cielo
+                        distance={50}
+                    />
 
                     {/* Renderiza el modelo */}
-                    <ModelSoil3D />
+                    <ModelSoil3D position={[0,-5,0]}/>
+                    <Text3D />
                 </Canvas>
             </div>
         </>
