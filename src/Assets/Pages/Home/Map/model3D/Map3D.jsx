@@ -4,6 +4,9 @@ import { OrbitControls, useGLTF } from "@react-three/drei"; // Importa OrbitCont
 import ModelMap3D from "./ModelMap3D";
 import ModelMapSoil3D from "./ModelMapSoil3D";
 import "../map.css"
+import ModelMapManagement3D from "./ModelMapManagement3D";
+import ModelMapDeforestation3D from "./ModelMapDeforestation3D";
+import ModelMapBiodiversity3D from "./ModelMapBiodiversity3D";
 
 
 // Definición del componente funcional RecyCling
@@ -21,7 +24,13 @@ const Map3D = () => {
           <ModelMap3D position={[0, 0, 0]} scale={[1, 1, 1]} />
 
           {/* Modelo del suelo (giratorio) */}
-          <ModelMapSoil3D position={[-60, 40, -30]} scale={[7, 7, 7]} />
+          <ModelMapSoil3D position={[-60, 40, -30]} scale={[5, 5, 5]} />
+
+          <ModelMapManagement3D position={[0, 20, 20]} scale={[1.8,1.8,1.8]}/>
+
+          <ModelMapDeforestation3D position={[20, 40, -30]} scale={[4, 4, 4]}/>
+
+          <ModelMapBiodiversity3D position={[70, 10, 20]} scale={[4, 4, 4]}/>
 
           {/* Controles de cámara */}
           <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
