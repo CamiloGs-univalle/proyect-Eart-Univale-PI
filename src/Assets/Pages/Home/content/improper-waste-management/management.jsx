@@ -4,7 +4,6 @@ import { OrbitControls, useGLTF, Sky } from "@react-three/drei"; // Importa Orbi
 import "./css/management.css";
 import City3d from "./models/City3d";
 import Citytext from "./models/title-city";
-import Person from "./models/person3d";
 
 const Management = () => {
     return (
@@ -23,17 +22,9 @@ const Management = () => {
                 <Canvas
                     shadows // Activa el renderizado de sombras en el Canvas
                     camera={{
-                        position: [5, 15, 50], // Posición de la cámara
+                        position: [1, 15, 40], // Posición de la cámara
                         fov: 30,               // Campo de visión de la cámara
                     }}
-
-                    style={
-                        {
-                            height: 1000,
-                            width: 1500,
-                            right: 270
-                        }
-                    }
                 >
                     {/* Controles para rotar y mover el modelo 3D */}
                     <OrbitControls />
@@ -71,7 +62,6 @@ const Management = () => {
                     {/* Renderiza el modelo de la ciudad con sombras activadas */}
                     <City3d castShadow receiveShadow /> {/* Activa sombras en el modelo */}
                     <Citytext />
-                    <Person />
 
                 </Canvas>
 

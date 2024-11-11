@@ -17,11 +17,9 @@ const Citytext = () => {
                 
                 style={
                     {
-                        color: "#fff",
+                        color: "#a3877d",
                         fontSize: "10pt"
                     }
-
-                    
                 }
             >
                 <h1>Bienvenidos a una ciudad victima del mal manejo de reciduos</h1>

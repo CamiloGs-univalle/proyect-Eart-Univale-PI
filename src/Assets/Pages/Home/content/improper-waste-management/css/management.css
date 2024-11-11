@@ -57,11 +57,11 @@ body {
 /* Contenedor del modelo 3D en .ciudadcita */
 .ciudadcita {
     position: fixed;
-    width: 45vw;
-    height: 70vh;
+    width: 35vw;
+    height: 55vh;
     left: auto; /* Alinea automáticamente */
     right: 100px; 
-    top: 250px;
+    top: 300px;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -91,7 +91,7 @@ body {
     .ciudadcita {
         position: relative;
         width: 50vw;
-        height: 80vh;
+        height: 60vh;
         left: auto;
         right: 10px; /* Ajustado para evitar desbordamiento */
     }
