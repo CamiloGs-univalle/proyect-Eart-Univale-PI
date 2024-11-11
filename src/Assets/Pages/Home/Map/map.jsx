@@ -6,7 +6,7 @@ const Map = () => {
   return (
     <>
       <Header />
-      <div className="App">
+      <div>
         <h1>MAPA</h1>
         <div className="contenedormap">
           <Map3D className="container-map3d" />
