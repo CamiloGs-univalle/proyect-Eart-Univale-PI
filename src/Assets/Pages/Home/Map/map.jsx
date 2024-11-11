@@ -35,26 +35,26 @@ const Map = () => {
               {/* Modelo del suelo (giratorio) */}
 
               <group position={[0, 20, 20]}>
-              <ModelMapManagement3D position={[0, 5, -10]} scale={[4, 4, 4]} />
-              <Text3DManagement/>
+                <ModelMapManagement3D position={[0, 5, -10]} scale={[4, 4, 4]} />
+                <Text3DManagement />
               </group>
 
               <group position={[20, 40, -30]}>
-              <ModelMapDeforestation3D position={[0, 0, -10]} scale={[4, 4, 4]} />
+                <ModelMapDeforestation3D position={[0, 0, -10]} scale={[4, 4, 4]} />
               </group>
 
               <group position={[70, 10, 20]}>
-              <ModelMapBiodiversity3D position={[0, 0, -10]} scale={[4, 4, 4]} />
+                <ModelMapBiodiversity3D position={[0, 0, -10]} scale={[4, 4, 4]} />
               </group>
-              
 
-              
 
-              
+
+
+
 
 
               {/* Controles de cámara */}
-              <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+              <OrbitControls enablePan={false} enableZoom={false} enableRotate={true} />
             </Canvas>
           </div>
         </div>
