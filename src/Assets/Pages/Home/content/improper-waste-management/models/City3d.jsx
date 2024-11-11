@@ -63,6 +63,7 @@ export function City3d(props) {
             receiveShadow
             geometry={nodes.Builidings_4.geometry}
             material={materials.MaterialWhite}
+            onClick={(e) => handleClick(e, 'Los residuos en descomposición liberan gases como metano y dióxido de carbono, contribuyendo al cambio climático y a la contaminación del aire. En áreas con residuos acumulados, este problema se agrava.')} // Pasa el nombre directamente
           />
         </group>
         <mesh
@@ -72,6 +73,7 @@ export function City3d(props) {
           geometry={nodes.Cajas1.geometry}
           material={materials.BoxesMaterial}
           userData={{ name: 'Cajas1' }}
+          onClick={(e) => handleClick(e, 'Los residuos en descomposición liberan gases como metano y dióxido de carbono, contribuyendo al cambio climático y a la contaminación del aire. En áreas con residuos acumulados, este problema se agrava.')} // Pasa el nombre directamente
         />
         <mesh
           name="Cajas2"
@@ -80,6 +82,7 @@ export function City3d(props) {
           geometry={nodes.Cajas2.geometry}
           material={materials.BoxesMaterial}
           userData={{ name: 'Cajas2' }}
+          onClick={(e) => handleClick(e, ' Los residuos no gestionados correctamente liberan toxinas que se filtran en el suelo, afectando la calidad de la tierra y reduciendo su fertilidad. Esto daña a plantas, animales y afecta la producción agrícola.')} // Pasa el nombre directamente
         />
         <mesh
           name="Cart"
@@ -96,6 +99,7 @@ export function City3d(props) {
           geometry={nodes.EggCarton.geometry}
           material={materials.EggMaterial}
           userData={{ name: 'EggCarton' }}
+          onClick={(e) => handleClick(e, 'Si no se almacena correctamente los residuos filosos los daños a los animales en busca de comida puede ser muy grande')} // Pasa el nombre directamente
         />
         <group name="Ground" userData={{ name: 'Ground' }}>
           <mesh
@@ -104,7 +108,7 @@ export function City3d(props) {
             receiveShadow
             geometry={nodes.Ground_1.geometry}
             material={materials.MaterialBlackFloor}
-            onClick={(e) => handleClick(e, 'Si no se almacena correctamente los residuos filosos los daños a los animales en busca de comida puede ser muy grande')} // Pasa el nombre directamente
+            onClick={(e) => handleClick(e, 'La acumulación de basura en áreas abiertas atrae roedores, insectos y otras plagas, lo que aumenta la propagación de enfermedades y afecta la higiene y salud de las comunidades cercanas.')} // Pasa el nombre directamente
           />
           <mesh
             name="Ground_2"
@@ -112,7 +116,7 @@ export function City3d(props) {
             receiveShadow
             geometry={nodes.Ground_2.geometry}
             material={materials.MaterialWhiteFloor}
-            onClick={(e) => handleClick(e, 'Las bolsas de basura dañan el medio hambiente')} // Pasa el nombre directamente
+            onClick={(e) => handleClick(e, 'La acumulación de basura en la tierra degrada los paisajes naturales, afectando el valor estético y turístico de muchas áreas. La pérdida de espacios naturales afecta la biodiversidad y el bienestar de las comunidades.')} // Pasa el nombre directamente
           />
 
 
