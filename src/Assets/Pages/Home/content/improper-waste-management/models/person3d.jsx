@@ -7,34 +7,59 @@ export function Person(props) {
   const { nodes, materials, animations } = useGLTF('/model3D/person.glb');
   const { actions } = useAnimations(animations, group);
 
-  // Estado para la posición del modelo
-  const [position, setPosition] = useState([0, 0.4, 0]);
+  // Estado para la posición del modelo y el salto
+  const [position, setPosition] = useState([-3, 0.4, 6]);
+  const [isJumping, setIsJumping] = useState(false);
 
-  // Manejo de eventos de teclado para mover el modelo
+  // Función para manejar eventos de teclado y mover el modelo
   const handleKeyDown = (event) => {
     setPosition((prevPosition) => {
       const [x, y, z] = prevPosition;
+      const step = 0.2; // Ajusta la distancia de movimiento
       switch (event.key) {
         case 'w': // Adelante
-          return [x, y, z - 0.1];
+          return [x, y, z - step];
         case 's': // Atrás
-          return [x, y, z + 0.1];
+          return [x, y, z + step];
         case 'a': // Izquierda
-          return [x - 0.1, y, z];
+          return [x - step, y, z];
         case 'd': // Derecha
-          return [x + 0.1, y, z];
+          return [x + step, y, z];
+        case 'w' && 'a': // Adelante e izquierda (diagonal)
+          return [x - step, y, z - step];
+        case 'w' && 'd': // Adelante y derecha (diagonal)
+          return [x + step, y, z - step];
+        case 's' && 'a': // Atrás e izquierda (diagonal)
+          return [x - step, y, z + step];
+        case 's' && 'd': // Atrás y derecha (diagonal)
+          return [x + step, y, z + step];
         case ' ':
-            [x, y + -0.1,y, z]; 
+          if (!isJumping) {
+            setIsJumping(true);
+            return [x, y + 1, z]; // Salto inicial
+          }
+          break;
         default:
           return prevPosition;
       }
     });
   };
 
+  // Animación de salto
+  useEffect(() => {
+    if (isJumping) {
+      const jumpTimeout = setTimeout(() => {
+        setPosition((prevPosition) => [prevPosition[0], 0.4, prevPosition[2]]);
+        setIsJumping(false);
+      }, 500); // Duración del salto
+      return () => clearTimeout(jumpTimeout);
+    }
+  }, [isJumping]);
+
   // Activar la animación de caminar cuando el modelo se esté moviendo
   useEffect(() => {
     if (actions['walk']) {
-      actions['walk'].play(); // Asegúrate de que la animación "walk" exista en el modelo
+      actions['walk'].play();
     }
     return () => {
       if (actions['walk']) {
@@ -127,17 +152,5 @@ export function Person(props) {
 }
 
 useGLTF.preload('/model3D/person.glb');
-
-// Componente principal de la escena
-// const ScenaCausas = () => {
-//   return (
-//     <Canvas camera={{ position: [0, 2, 5], fov: 35 }}>
-//       <ambientLight intensity={0.5} />
-//       <directionalLight position={[5, 10, 10]} intensity={1.5} />
-//       <OrbitControls />
-//       <Model />
-//     </Canvas>
-//   );
-// };
 
 export default Person;

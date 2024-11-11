@@ -104,7 +104,7 @@ export function City3d(props) {
             receiveShadow
             geometry={nodes.Ground_1.geometry}
             material={materials.MaterialBlackFloor}
-            onClick={(e) => handleClick(e, 'Ground_1')} // Pasa el nombre directamente
+            onClick={(e) => handleClick(e, 'Si no se almacena correctamente los residuos filosos los daños a los animales en busca de comida puede ser muy grande')} // Pasa el nombre directamente
           />
           <mesh
             name="Ground_2"
@@ -112,7 +112,7 @@ export function City3d(props) {
             receiveShadow
             geometry={nodes.Ground_2.geometry}
             material={materials.MaterialWhiteFloor}
-            onClick={(e) => handleClick(e, 'Ground_2')} // Pasa el nombre directamente
+            onClick={(e) => handleClick(e, 'Las bolsas de basura dañan el medio hambiente')} // Pasa el nombre directamente
           />
 
 
@@ -120,17 +120,23 @@ export function City3d(props) {
             <Html
               position={[clickedObject.position.x, clickedObject.position.y + 1, clickedObject.position.z]}
               center
+              style={
+                {
+                  width: 550,
+                  top: -200
+                }
+              }
             >
               <div style={{
                 background: 'rgba(255, 255, 255, 0.8)',
                 padding: '10px',
                 borderRadius: '8px',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
-                width: '150px',
+                width: '200px',
                 textAlign: 'center'
               }}>
                 
-                <p>Descripción sobre {clickedObject.name}</p>
+                <p>{clickedObject.name}</p>
               </div>
             </Html>
           )}
