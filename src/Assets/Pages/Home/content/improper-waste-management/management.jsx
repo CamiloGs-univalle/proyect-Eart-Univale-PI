@@ -4,6 +4,7 @@ import { OrbitControls, useGLTF, Sky } from "@react-three/drei"; // Importa Orbi
 import "./css/management.css";
 import City3d from "./models/City3d";
 import Citytext from "./models/title-city";
+import Person from "./models/person3d";
 
 const Management = () => {
     return (
@@ -62,6 +63,7 @@ const Management = () => {
                     {/* Renderiza el modelo de la ciudad con sombras activadas */}
                     <City3d castShadow receiveShadow /> {/* Activa sombras en el modelo */}
                     <Citytext />
+                    <Person />
 
                 </Canvas>
 
