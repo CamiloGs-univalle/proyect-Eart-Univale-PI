@@ -4,6 +4,7 @@ import { OrbitControls, useGLTF, Sky } from "@react-three/drei";
 import "./erosion.css";
 import Text3D from "./model/Text3D";
 import ModelSoil3D from "./model/ModelSoil3D"
+import Personsoil from "./model/Personsoil";
 
 const Erosion = () => {
     return (
@@ -117,20 +118,11 @@ const Erosion = () => {
 
                 <div className="conteiner">
                     <div class="info-box">
-                        <p>La erosión del suelo es un proceso natural, pero en muchos casos
-                            acelerado por la actividad humana, que implica la pérdida y desplazamiento
-                            de la capa superior del suelo, esencial para la vida vegetal y la agricultura.
-                            Es un tema importante en el contexto ambiental, ya que afecta la productividad agrícola,
-                            la calidad del agua y la biodiversidad. A continuación te proporcionaré la información
-                            relevante y estructurada que necesitas para desarrollar una página web sobre este tema.</p>
 
-                        <h3>1. Definición de erosión del suelo</h3>
+                        <h3>Tipos de erosión del suelo</h3>
 
-                        <p>La erosión del suelo es el proceso por el cual las partículas de suelo son desplazadas
-                            y removidas, principalmente por el viento, el agua y, en menor medida, por
-                            actividades humanas como la agricultura y la construcción. A medida que la capa fértil
-                            del suelo se reduce, disminuye la capacidad de la tierra para soportar cultivos, ecosistemas
-                            y estructuras humanas.</p>
+                        <p>Erosión hídrica (por agua) El agua es una de las principales causas de erosión del suelo. Este tipo de erosión ocurre cuando la lluvia y el agua corriente arrastran las partículas de suelo, lo que puede generar varios tipos de erosión hídrica:</p>
+ 
                     </div>
                     <div>
                         {/* Contenedor para el modelo 3D con clase 'container-3d' */}
@@ -201,6 +193,7 @@ const Erosion = () => {
                                 {/* Renderiza el modelo */}
                                 <ModelSoil3D position={[0, -5, 0]} />
                                 <Text3D />
+                                <Personsoil/>
                             </Canvas>
                         </div>
 
