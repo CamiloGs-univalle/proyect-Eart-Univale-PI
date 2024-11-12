@@ -9,15 +9,16 @@ import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
 import Text3DSoil from "./model3D/Text3DSoil";
 import { Canvas } from "@react-three/fiber";
 import Text3DManagement from "./model3D/Text3DManagement";
+import { Link } from "react-router-dom";
 
 const Map = () => {
   // Funciones de redirección
   const redirectToSoil = () => {
-    window.location.href = "/soil-erosion"; // Cambia "/soil" por la ruta deseada
+    <Link to="/management" className="inicio">INICIAR PARTIDA</Link>
   };
   
   const redirectToManagement = () => {
-    window.location.href = "/management"; // Cambia "/management" por la ruta deseada
+    location.href = "/management"; // Cambia "/management" por la ruta deseada
   };
 
   const redirectToDeforestation = () => {
