@@ -16,7 +16,7 @@ const Management = () => {
     const handleRedirect = () => {
         setIsExpanding(true); // Inicia la animación
         setTimeout(() => {
-            location.href = "/Typesm"; // Cambia "/management" por la ruta deseada
+            location.href = "/Typesm";
         }, 1500); // Ajusta el tiempo a la duración de la animación
     };
 
