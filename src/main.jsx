@@ -11,6 +11,7 @@ import Biodiversity from './Assets/Pages/Home/content/loss-of-biodiversity/biodi
 import Map from './Assets/Pages/Home/Map/map';
 import We from './Assets/Pages/Home/nosotros/we';
 import Erosion from './Assets/Pages/Home/content/soil-erosion/erosion';
+import Typesm from './Assets/Pages/Home/content/improper-waste-management/seccions/Types';
 
 
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
   { path: "/soil-erosion",element: <Erosion />,},
   { path: "/deforestation",element: <Deforestation />,},
   { path: "/management",element: <Management />,},
+  { path: "/Typesm",element: <Typesm />,},
   { path: "/biodiversity",element: <Biodiversity />,},
   { path: "/we",element: <We />,},
   { path: "*", element: <Page404 /> },
