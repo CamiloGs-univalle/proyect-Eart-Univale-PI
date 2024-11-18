@@ -7,21 +7,20 @@ const Management = () => {
     return (
         <>
             <Header />
-            <div className="page-container" style={{ backgroundColor: "#8B5E3C", height: "100vh", padding: "20px" }}>
-                {/* Título principal */}
+            <div className="page-container" style={{ backgroundColor: "#8C695D" , height: "100vh", padding: "20px" }}>
+                
                 <div className="title" style={{
                     textAlign: "center",
                     fontSize: "36px",
                     fontWeight: "bold",
-                    color: "#4CAF50",
                     marginBottom: "20px"
                 }}>
                     Tipos de residuos
                 </div>
 
-                {/* Contenedor de contenido */}
+                
                 <div className="content-box" style={{
-                    backgroundColor: "#F4A261",
+                    
                     margin: "0 auto",
                     width: "60%",
                     padding: "20px",
