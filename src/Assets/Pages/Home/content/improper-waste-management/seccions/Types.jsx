@@ -12,6 +12,8 @@ const Management = () => {
                 <div className="content-box">
                     <h2>Selecciona el tipo de residuo del que requieras información</h2>
                 </div>
+
+                
             </div>
         </>
     );

@@ -14,6 +14,11 @@
     font-weight: bold;
     margin-bottom: 20px;
     color: #35A84D; /* Verde para el título */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 3vw;
+    
 }
 
 .content-box {
@@ -25,6 +30,11 @@
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 4vw;
+    
 }
 
 .content-box h2 {
