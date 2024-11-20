@@ -17,7 +17,7 @@ const Management = () => {
         setIsExpanding(true); // Inicia la animación
         setTimeout(() => {
             location.href = "/Typesm";
-        }, 1500); // Ajusta el tiempo a la duración de la animación
+        }, 1250); // Ajusta el tiempo a la duración de la animación
     };
 
     return (
