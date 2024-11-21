@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function Model(props) {
+export function moundtrash(props) {
   const { nodes, materials } = useGLTF('/model3D/moundtrash.glb')
   return (
     <group {...props} dispose={null}>
@@ -31,3 +31,5 @@ export function Model(props) {
 }
 
 useGLTF.preload('/model3D/moundtrash.glb')
+
+export default moundtrash;
