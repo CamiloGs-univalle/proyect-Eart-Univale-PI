@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "../css/Types.css"; // Ruta del CSS
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import { Physics } from "@react-three/cannon";
+import { Physics, RigidBody } from "@react-three/rapier";
+
 import Header from "../../../../Header/Header";
 import Trashone from "../models/trashone3d";
 import Factory from "../models/Factory3d";
@@ -49,18 +50,23 @@ const Types = () => {
             borderRadius: 100,
           }}
         >
-          <OrbitControls />
-          <mesh onClick={handleModelClick}>
-            <Trashone />
-          </mesh>
+          <Physics gravity={[0, 0, 0]}>
+            <OrbitControls />
+            <RigidBody>
+              <mesh onClick={handleModelClick}>
+                <Trashone />
+              </mesh>
+            </RigidBody>
+          </Physics>
         </Canvas>
 
-        {/* Canvas de Factory (con física) */}
+        {/* Canvas de Factory */}
         <Canvas
           shadows
           camera={{
-            position: [5, 15, 50],
+            position: [2, 10, 50],
             fov: 100,
+            
           }}
           style={{
             height: 400,
@@ -71,14 +77,16 @@ const Types = () => {
             borderRadius: 100,
           }}
         >
-          <Physics gravity={[0, -9.8, 0]}>
+          <Physics gravity={[0, 0, 0]} debug>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
             <pointLight position={[-10, 10, -10]} intensity={0.7} />
             <OrbitControls />
-            <mesh onClick={handleModelClickfactory}>
-              <Factory />
-            </mesh>
+            <RigidBody>
+              <mesh onClick={handleModelClickfactory}>
+                <Factory />
+              </mesh>
+            </RigidBody>
           </Physics>
         </Canvas>
       </div>

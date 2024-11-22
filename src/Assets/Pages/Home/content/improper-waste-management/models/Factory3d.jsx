@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
+import { RigidBody } from '@react-three/rapier';
 
 export function Factory3d(props) {
   const group = useRef()
@@ -7,26 +8,28 @@ export function Factory3d(props) {
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
-        <mesh
-          name="Factory"
-          castShadow
-          receiveShadow
-          geometry={nodes.Factory.geometry}
-          material={materials['Material.005']}
-          rotation={[Math.PI / 2, 0, 0]}
-          userData={{ name: 'Factory' }}
-        />
-        <mesh
-          name="Cube"
-          castShadow
-          receiveShadow
-          geometry={nodes.Cube.geometry}
-          material={materials['Material.006']}
-          position={[-7.904, -0.021, -0.554]}
-          rotation={[Math.PI, 0, 0]}
-          userData={{ name: 'Cube' }}
-        />
+      <group rotation={[0, Math.PI / 2, 0]} name="Scene">
+        <group name="Cube" position={[-7.904, -0.021, -0.554]} rotation={[Math.PI, 0, 0]}>
+          <RigidBody
+            type="dynamic"
+            colliders="hull" // Hitbox basada en la forma del modelo
+          >
+            <mesh
+              name="Cube001"
+              castShadow
+              receiveShadow
+              geometry={nodes.Cube001.geometry}
+              material={materials['Material.006']}
+            />
+          </RigidBody>
+          <mesh
+            name="Cube001_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Cube001_1.geometry}
+            material={materials['Material.005']}
+          />
+        </group>
         <mesh
           name="River1"
           castShadow
@@ -261,39 +264,53 @@ export function Factory3d(props) {
             name: 'River 2',
           }}
         />
-        <mesh
-          name="Barreltoxic"
-          castShadow
-          receiveShadow
-          geometry={nodes.Barreltoxic.geometry}
-          material={materials['Material.008']}
-          position={[-26.081, 3.1, -8.105]}
-          rotation={[-0.035, 0, 0]}
-          scale={[0.034, 0.034, 0.028]}
-          userData={{ name: 'Barreltoxic' }}
-        />
-        <mesh
-          name="Barreltoxic001"
-          castShadow
-          receiveShadow
-          geometry={nodes.Barreltoxic001.geometry}
-          material={materials['Material.007']}
+        <RigidBody
+          type="dynamic"
+          colliders="hull" // Hitbox basada en la forma del modelo
+          position={[-26.081, 3.1, -8.105]} // Posición inicial
+        >
+          <mesh
+            name="Barreltoxic"
+            castShadow
+            receiveShadow
+            geometry={nodes.Barreltoxic.geometry}
+            material={materials['Material.008']}
+            scale={[0.034, 0.034, 0.028]}
+            userData={{ name: 'Barreltoxic' }}
+          />
+        </RigidBody>
+
+        <RigidBody
+          type="dynamic"
+          colliders="hull"
           position={[-22.164, 4.071, -2.711]}
-          rotation={[-0.035, 0, 0]}
-          scale={[0.034, 0.034, 0.028]}
-          userData={{ name: 'Barreltoxic.001' }}
-        />
-        <mesh
-          name="Barreltoxic002"
-          castShadow
-          receiveShadow
-          geometry={nodes.Barreltoxic002.geometry}
-          material={materials['Material.004']}
+        >
+          <mesh
+            name="Barreltoxic001"
+            castShadow
+            receiveShadow
+            geometry={nodes.Barreltoxic001.geometry}
+            material={materials['Material.007']}
+            scale={[0.034, 0.034, 0.028]}
+            userData={{ name: 'Barreltoxic.001' }}
+          />
+        </RigidBody>
+
+        <RigidBody
+          type="dynamic"
+          colliders="hull"
           position={[-18.704, 5.233, -7.069]}
-          rotation={[-0.035, 0, 0]}
-          scale={[0.034, 0.034, 0.028]}
-          userData={{ name: 'Barreltoxic.002' }}
-        />
+        >
+          <mesh
+            name="Barreltoxic002"
+            castShadow
+            receiveShadow
+            geometry={nodes.Barreltoxic002.geometry}
+            material={materials['Material.004']}
+            scale={[0.034, 0.034, 0.028]}
+            userData={{ name: 'Barreltoxic.002' }}
+          />
+        </RigidBody>
       </group>
     </group>
   )
