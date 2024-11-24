@@ -5,7 +5,8 @@ import { OrbitControls, Sky } from "@react-three/drei";
 import "./css/management.css";
 import City3d from "./models/City3d";
 import Citytext from "./models/title-city";
-import Person from "./models/person3d";
+
+import Person from "./models/HumanA3d";
 import { useNavigate } from "react-router-dom";
 
 
