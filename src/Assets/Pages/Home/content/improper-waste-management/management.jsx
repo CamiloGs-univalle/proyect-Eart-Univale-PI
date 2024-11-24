@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../../../Header/Header";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
@@ -9,10 +9,16 @@ import Citytext from "./models/title-city";
 import Person from "./models/HumanA3d";
 
 const Management = () => {
+    const navigate = useNavigate();
     const [isExpanding, setIsExpanding] = useState(false);
 
     const handleRedirect = () => {
         setIsExpanding(true); // Inicia la animación
+
+        // Espera a que la animación termine antes de redirigir
+        setTimeout(() => {
+            navigate("/Typesm"); // Redirige a la nueva página
+        }, 1250); // Ajusta el tiempo para que coincida con la duración de la animación
     };
 
     return (
@@ -77,13 +83,7 @@ const Management = () => {
                 className={`redirect-circle ${isExpanding ? "expanding" : ""}`}
                 onClick={handleRedirect}
             >
-                {/* Usar Link para redirección */}
-                {isExpanding && (
-                    <Link to="/Typesm" className="redirect-link">
-                        →
-                    </Link>
-                )}
-                {!isExpanding && "→"}
+                →
             </div>
         </>
     );
