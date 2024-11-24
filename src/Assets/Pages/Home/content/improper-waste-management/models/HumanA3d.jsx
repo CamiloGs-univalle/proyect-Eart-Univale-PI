@@ -3,55 +3,70 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 
 export function Human3d(props) {
   const group = useRef();
+  const positionRef = useRef([-3, 0.4, 6]); // Ref para rastrear la posición actual
+  const activeKeys = useRef(new Set()); // Almacenar teclas activas
   const { nodes, materials, animations } = useGLTF('/model3D/humanwalker.glb');
   const { actions } = useAnimations(animations, group);
 
   // Estado para la posición y rotación del modelo
-  const [position, setPosition] = useState([-3, 0.4, 6]); // Posición inicial
+  const [position, setPosition] = useState(positionRef.current); // Inicializa con la posición del ref
   const [rotation, setRotation] = useState([0, 0, 0]); // Rotación inicial
   const [isMoving, setIsMoving] = useState(false);
-
-  // Mapeo de direcciones a ángulos de rotación (eje Y en radianes)
-  const directionToRotation = {
-    w: 0, // Frente (z negativo)
-    s: Math.PI, // Atrás (z positivo)
-    a: Math.PI / 2, // Izquierda (x negativo)
-    d: -Math.PI / 2, // Derecha (x positivo)
-  };
 
   // Manejo de eventos de teclado
   const handleKeyDown = (event) => {
     const key = event.key.toLowerCase();
-    const step = 1; // Distancia de movimiento por cada pulsación
-    setIsMoving(true);
+    activeKeys.current.add(key); // Agrega la tecla al conjunto activo
+    moveCharacter(); // Mueve el personaje
+  };
 
-    setPosition((prevPosition) => {
-      const [x, y, z] = prevPosition;
+  const handleKeyUp = (event) => {
+    const key = event.key.toLowerCase();
+    activeKeys.current.delete(key); // Elimina la tecla del conjunto activo
+    if (activeKeys.current.size === 0) {
+      setIsMoving(false); // Detiene la animación si no hay teclas activas
+    }
+  };
+
+  const moveCharacter = () => {
+    const step = 0.1; // Ajusta la distancia de movimiento (más lento)
+    let newPosition = [...positionRef.current]; // Copia de la posición actual
+
+    // Recorre todas las teclas activas
+    activeKeys.current.forEach((key) => {
+      const [x, y, z] = newPosition;
 
       switch (key) {
-        case 's': // Adelante
-          setRotation([0, directionToRotation.s, 0]);
-          return [x, y, z - 0.1];
+        case 's': // Frente
+          setRotation([0, Math.PI, 0]);
+          newPosition = [x, y, z - step];
+          break;
         case 'w': // Atrás
-          setRotation([0, directionToRotation.w, 0]);
-          return [x, y, z + 0.1];
-        case 'd': // Izquierda
-          setRotation([0, directionToRotation.d, 0]);
-          return [x - 0.1, y, z];
-        case 'a': // Derecha
-          setRotation([0, directionToRotation.a, 0]);
-          return [x + 0.1, y, z];
+          setRotation([0, 0, 0]);
+          newPosition = [x, y, z + step];
+          break;
+        case 'd': // Derecha
+          setRotation([0, -Math.PI / 2, 0]);
+          newPosition = [x - step, y, z];
+          break;
+        case 'a': // Izquierda
+          setRotation([0, Math.PI / 2, 0]);
+          newPosition = [x + step, y, z];
+          break;
         default:
-          return prevPosition;
+          break;
       }
     });
+
+    // Actualiza la posición solo si hay un cambio
+    if (JSON.stringify(newPosition) !== JSON.stringify(positionRef.current)) {
+      positionRef.current = newPosition; // Actualiza el ref de posición
+      setPosition(newPosition); // Actualiza el estado
+      setIsMoving(true); // Activa la animación de caminar
+    }
   };
 
-  const handleKeyUp = () => {
-    setIsMoving(false);
-  };
-
-  // Activar la animación de caminar
+  // Activar o detener la animación de caminar
   useEffect(() => {
     if (isMoving) {
       actions['Armature|Take 001|BaseLayer']?.play();
@@ -96,4 +111,3 @@ export function Human3d(props) {
 useGLTF.preload('/model3D/humanwalker.glb');
 
 export default Human3d;
-
