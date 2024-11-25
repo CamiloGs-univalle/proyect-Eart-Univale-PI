@@ -5,8 +5,12 @@ import "./erosion.css";
 import Text3D from "./model/Text3D";
 import ModelSoil3D from "./model/ModelSoil3D"
 import Personsoil from "./model/Personsoil";
+import ModelSoil3DPiso from "./model/modelsoil3Dpiso";
+import AnimalSoil from "./model/AnimalSoil";
+import { useRef } from "react";
 
 const Erosion = () => {
+    const animalRef = useRef(null);
     return (
         <>
             <Header />
@@ -93,6 +97,7 @@ const Erosion = () => {
                                 {/* Renderiza el modelo */}
                                 <ModelSoil3D position={[0, -5, 0]} />
                                 <Text3D />
+                                <Personsoil />
                             </Canvas>
                         </div>
 
@@ -122,7 +127,7 @@ const Erosion = () => {
                         <h3>Tipos de erosión del suelo</h3>
 
                         <p>Erosión hídrica (por agua) El agua es una de las principales causas de erosión del suelo. Este tipo de erosión ocurre cuando la lluvia y el agua corriente arrastran las partículas de suelo, lo que puede generar varios tipos de erosión hídrica:</p>
- 
+
                     </div>
                     <div>
                         {/* Contenedor para el modelo 3D con clase 'container-3d' */}
@@ -190,10 +195,12 @@ const Erosion = () => {
                                     distance={50}
                                 />
 
-                                {/* Renderiza el modelo */}
-                                <ModelSoil3D position={[0, -5, 0]} />
-                                <Text3D />
-                                <Personsoil/>
+                                
+                                   
+                                    <ModelSoil3DPiso />
+                                    <AnimalSoil ref={animalRef} />
+                            
+
                             </Canvas>
                         </div>
 
