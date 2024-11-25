@@ -16,7 +16,7 @@ const ModelMapBiodiversity3D = (props) => {
     return (
         <group {...props} dispose={null}>
             <group name="Sketchfab_Scene">
-                <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
+                <group name="Sketchfab_model" rotation={[-Math.PI / 2 , 0, 4.5]}>
                     <group name="Forest_SkullOBJcleanermaterialmergergles">
                         <mesh
                             name="Object_2"

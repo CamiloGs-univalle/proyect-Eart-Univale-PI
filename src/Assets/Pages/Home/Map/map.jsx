@@ -37,8 +37,7 @@ const Map = () => {
           <h1>MAPA</h1>
           <div className="contenedormap">
             <ModelMap3D className="container-map3d" />
-
-            <Canvas className="map-canvas" camera={{ position: [0, 70, 90], fov: 70 }}>
+            <Canvas className="map-canvas" camera={{ position: [0, 90, 90], fov: 60 }}>
               {/* Luz ambiental */}
               <ambientLight />
               <directionalLight position={[10, 10, 10]} intensity={3} />
@@ -47,9 +46,10 @@ const Map = () => {
               <ModelMap3D position={[0, 0, 0]} scale={[1, 1, 1]} />
 
               {/* Grupo del suelo */}
-              <group position={[-60, 40, -30]}>
-                <ModelMapSoil3D position={[0, 10, -10]} scale={[5, 5, 5]} onClick={redirectToSoil} />
+              <group position={[-60, 15, -30]}>
                 <Text3DSoil />
+                <ModelMapSoil3D position={[0, 10, -10]} scale={[5, 5, 5]} onClick={redirectToSoil} />
+                
               </group>
 
               {/* Grupo de gestión */}
@@ -59,13 +59,13 @@ const Map = () => {
               </group>
 
               {/* Grupo de deforestación */}
-              <group position={[20, 40, -30]}>
+              <group position={[20, 26, -30]}>
                 <ModelMapDeforestation3D position={[0, 0, -10]} scale={[4, 4, 4]} onClick={redirectToDeforestation} />
               </group>
 
               {/* Grupo de biodiversidad */}
               <group position={[70, 10, 20]}>
-                <ModelMapBiodiversity3D position={[0, 0, -10]} scale={[4, 4, 4]} onClick={redirectToBiodiversity} />
+                <ModelMapBiodiversity3D position={[0, 10, -10]} scale={[4, 4, 4]} onClick={redirectToBiodiversity} />
               </group>
 
               {/* Controles de cámara */}
