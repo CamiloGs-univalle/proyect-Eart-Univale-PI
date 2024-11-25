@@ -8,8 +8,8 @@ const ModelMap3D = (props) => {
   return (
     <group {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" position={[0, 20.637, -3.653]} rotation={[-0.004, 0, 0]}>
-          <group name="Map_01FBX" rotation={[Math.PI / 2, 0, 0]}>
+        <group name="Sketchfab_model" position={[0, 20.637, -3.653]} rotation={[0, 0, 0]}>
+          <group name="Map_01FBX" rotation={[Math.PI / 3, 0, 0]}>
             <group name="RootNode">
               <group name="map001" rotation={[-Math.PI / 1.2, 0, 0]} scale={[1.038, 1.038, 1]}>
                 <mesh
