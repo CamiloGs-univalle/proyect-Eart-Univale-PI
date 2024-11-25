@@ -18,7 +18,7 @@ const Management = () => {
         // Espera a que la animación termine antes de redirigir
         setTimeout(() => {
             navigate("/Typesm"); // Redirige a la nueva página
-        }, 1250); // Ajusta el tiempo para que coincida con la duración de la animación
+        }, 1280); // Ajusta el tiempo para que coincida con la duración de la animación
     };
 
     return (
