@@ -263,7 +263,7 @@ export function Factory3D(props) {
             name: 'River 2',
           }}
         />
-        <RigidBody type='fixed'>
+        <RigidBody type='fixed' colliders="hull">
           <mesh
             name="Cube001"
             castShadow
