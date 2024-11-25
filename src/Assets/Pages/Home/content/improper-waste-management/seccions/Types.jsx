@@ -34,17 +34,32 @@ const Types = () => {
 
 
       <div className="page-container">
+      <Canvas
+      style={{
+        top:-50,
+        width: 500,
+        height: 200
+      }}
+          camera={
+            {
+              position: [0, 0, 10],
+              fov: 50,
+              
+            }
+          }
+          
+          >
+            <OrbitControls/>
+            <Text3D />
+          </Canvas>
 
         <div className="content-box">
+
           <h2>{content}</h2>
+          
         </div>
-        <Center position={[0, 0, -5]}>
-          {/* Texto detrás */}
-          <Text3D size={1}>
-            Tipos de residuos
-            
-          </Text3D>
-        </Center>
+
+
         {/* Canvas de Trashone */}
         <Canvas
           shadows
@@ -84,7 +99,7 @@ const Types = () => {
             height: 400,
             width: 350,
             right: 680,
-            top: 100,
+            top: 10,
             position: "relative",
             borderRadius: 100,
           }}
