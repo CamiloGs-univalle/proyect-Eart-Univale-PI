@@ -6,6 +6,7 @@ import { Physics, RigidBody } from "@react-three/rapier";
 import Header from "../../../../Header/Header";
 import Trashone from "../models/trashone3d";
 import Factory from "../models/Factory3d";
+import Trash1 from "../models/Trash1";
 import Barrel from "../models/Barrel3D";
 import Text3D from "../2D/3D/Title3d";
 import Text2D from "../2D/TypesModel1"
@@ -34,29 +35,29 @@ const Types = () => {
 
 
       <div className="page-container">
-      <Canvas
-      style={{
-        top:-50,
-        width: 500,
-        height: 200
-      }}
+        <Canvas
+          style={{
+            top: -50,
+            width: 500,
+            height: 200
+          }}
           camera={
             {
               position: [0, 0, 10],
               fov: 50,
-              
+
             }
           }
-          
-          >
-            <OrbitControls/>
-            <Text3D />
-          </Canvas>
+
+        >
+          <OrbitControls />
+          <Text3D />
+        </Canvas>
 
         <div className="content-box">
 
           <h2>{content}</h2>
-          
+
         </div>
 
 
@@ -127,6 +128,9 @@ const Types = () => {
           </Physics>
         </Canvas>
 
+
+        
+        
       </div>
     </>
   );
