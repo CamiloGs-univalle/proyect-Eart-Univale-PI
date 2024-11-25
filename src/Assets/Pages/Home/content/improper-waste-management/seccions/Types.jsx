@@ -7,6 +7,7 @@ import { Physics, RigidBody } from "@react-three/rapier";
 import Header from "../../../../Header/Header";
 import Trashone from "../models/trashone3d";
 import Factory from "../models/Factory3d";
+import Barrel from "../models/Barrel3D";
 
 const Types = () => {
   const [content, setContent] = useState(
@@ -66,7 +67,6 @@ const Types = () => {
           camera={{
             position: [2, 10, 50],
             fov: 100,
-            
           }}
           style={{
             height: 400,
@@ -77,18 +77,23 @@ const Types = () => {
             borderRadius: 100,
           }}
         >
-          <Physics gravity={[0, 0, 0]} debug>
+          {/* Agregar <Physics /> aquí */}
+          <Physics gravity={[0, -9.8, 0]}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
             <pointLight position={[-10, 10, -10]} intensity={0.7} />
             <OrbitControls />
-            <RigidBody>
-              <mesh onClick={handleModelClickfactory}>
-                <Factory />
-              </mesh>
+
+            {/* Envuelve los elementos dentro de la física */}
+            <RigidBody colliders="hull" position={[0, 0, 0]}>
+              <Barrel />
             </RigidBody>
+            <mesh onClick={handleModelClickfactory}>
+              <Factory />
+            </mesh>
           </Physics>
         </Canvas>
+
       </div>
     </>
   );
