@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/Types.css"; // Ruta del CSS
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Center, OrbitControls } from "@react-three/drei";
 import { Physics, RigidBody } from "@react-three/rapier";
 import Header from "../../../../Header/Header";
 import Trashone from "../models/trashone3d";
@@ -30,17 +30,26 @@ const Types = () => {
   return (
     <>
       <Header />
+
+
+
       <div className="page-container">
-      
+
         <div className="content-box">
           <h2>{content}</h2>
         </div>
-
+        <Center position={[0, 0, -5]}>
+          {/* Texto detrás */}
+          <Text3D size={1}>
+            Tipos de residuos
+            
+          </Text3D>
+        </Center>
         {/* Canvas de Trashone */}
         <Canvas
           shadows
           camera={{
-            position: [5, 15, 90],
+            position: [0, 5, 90],
             fov: 100,
           }}
           style={{
@@ -52,11 +61,12 @@ const Types = () => {
             borderRadius: 100,
           }}
         >
+          <Text2D />
           <Physics gravity={[0, 0, 0]}>
             <OrbitControls />
             <RigidBody>
               <mesh onClick={handleModelClick}>
-              
+
                 <Trashone />
               </mesh>
             </RigidBody>
@@ -79,6 +89,8 @@ const Types = () => {
             borderRadius: 100,
           }}
         >
+
+
           {/* Agregar <Physics /> aquí */}
           <Physics gravity={[0, -9.8, 0]}>
             <ambientLight intensity={0.5} />
@@ -87,11 +99,13 @@ const Types = () => {
             <OrbitControls />
 
             {/* Envuelve los elementos dentro de la física */}
-            <RigidBody colliders="hull" position={[-21, 12, -12]}>
-              <Barrel />
+            <RigidBody colliders="hull" position={[-4, 12, 20]}>
+              <Barrel rotation={[0, Math.PI / 4, 0]} />
             </RigidBody>
             <RigidBody mass={4} type="fixed" >
-              <mesh onClick={handleModelClickfactory}>
+              <mesh onClick={handleModelClickfactory}
+                rotation={[0, Math.PI / 2, 0]} // Rotar hacia la izquierda (90 grados)
+              >
                 <Factory />
               </mesh>
             </RigidBody>

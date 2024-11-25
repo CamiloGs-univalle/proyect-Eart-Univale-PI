@@ -9,9 +9,9 @@ const Model12d = () => {
                 occlude
                 className="welcome-text"
                 center
-                distanceFactor={10}
+                distanceFactor={90}
                 transform
-                position={[1, 5, 0]}
+                position={[1, 50, 0]}
             >
                 <h1>Tipos de residuos</h1>
             </Html>
