@@ -23,7 +23,7 @@ export function Barrel(props) {
             geometry={nodes.defaultMaterial_1.geometry}
             material={materials.drum}
             position={[37.933, 9338.539, -702.987]}
-            rotation={[Math.PI / 2, 0, 0]}
+            rotation={[Math.PI / 4, 0, 0]}
           />
         </group>
       
