@@ -39,19 +39,19 @@ export function Jinosauro(props) {
             const [x, y, z] = newPosition;
 
             switch (key) {
-                case 'd': // Frente
+                case 's': // Frente
                     setRotation([0, Math.PI, 0]);
                     newPosition = [  x + step, y, z ];
                     break;
-                case 'a': // Atrás
+                case 'w': // Atrás
                     setRotation([0, 0, 0]);
                     newPosition = [x - step, y, z];
                     break;
-                case 'w': // Derecha
+                case 'd': // Derecha
                     setRotation([0, -Math.PI / 2, 0]);
                     newPosition = [x, y, z - step];
                     break;
-                case 's': // Izquierda
+                case 'a': // Izquierda
                     setRotation([0, Math.PI / 2, 0]);
                     newPosition = [ x, y, z + step];
                     break;

@@ -1,17 +1,8 @@
 import React, { useRef, useState, useStates } from 'react'
-import { Html, useGLTF } from '@react-three/drei'
-import { useThree } from '@react-three/fiber'
+import { useGLTF } from '@react-three/drei'
 
 export function ModelSoil3DPiso(props) {
   const { nodes, materials } = useGLTF('/model3D/ModelSoil3DPiso.glb')
-  const [clickedObject, setClickedObject] = useState(null) // Para guardar el objeto clickeado
-
-  // Función para manejar los clics
-  const handleClick = (e, objectName) => {
-    e.stopPropagation() // Evita que el clic afecte otros elementos
-    const position = e.object.position // Obtiene la posición del objeto clickeado
-    setClickedObject({ name: objectName, position }) // Actualiza el estado con la información del objeto
-  }
   return (
     <group {...props} dispose={null}>
       <group name="Sketchfab_Scene">
