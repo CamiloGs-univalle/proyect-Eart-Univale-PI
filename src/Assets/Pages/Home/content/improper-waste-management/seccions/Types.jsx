@@ -3,11 +3,12 @@ import "../css/Types.css"; // Ruta del CSS
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Physics, RigidBody } from "@react-three/rapier";
-
 import Header from "../../../../Header/Header";
 import Trashone from "../models/trashone3d";
 import Factory from "../models/Factory3d";
 import Barrel from "../models/Barrel3D";
+import Text3D from "../2D/3D/Title3d";
+import Text2D from "../2D/TypesModel1"
 
 const Types = () => {
   const [content, setContent] = useState(
@@ -30,7 +31,7 @@ const Types = () => {
     <>
       <Header />
       <div className="page-container">
-        <div className="title">Tipos de residuos</div>
+      
         <div className="content-box">
           <h2>{content}</h2>
         </div>
@@ -55,6 +56,7 @@ const Types = () => {
             <OrbitControls />
             <RigidBody>
               <mesh onClick={handleModelClick}>
+              
                 <Trashone />
               </mesh>
             </RigidBody>
@@ -85,12 +87,14 @@ const Types = () => {
             <OrbitControls />
 
             {/* Envuelve los elementos dentro de la física */}
-            <RigidBody colliders="hull" position={[0, 0, 0]}>
+            <RigidBody colliders="hull" position={[-21, 12, -12]}>
               <Barrel />
             </RigidBody>
-            <mesh onClick={handleModelClickfactory}>
-              <Factory />
-            </mesh>
+            <RigidBody mass={4} type="fixed" >
+              <mesh onClick={handleModelClickfactory}>
+                <Factory />
+              </mesh>
+            </RigidBody>
           </Physics>
         </Canvas>
 
