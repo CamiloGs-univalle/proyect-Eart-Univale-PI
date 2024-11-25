@@ -1,13 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../../../Header/Header";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sky } from "@react-three/drei";
 import "./css/management.css";
 import City3d from "./models/City3d";
 import Citytext from "./models/title-city";
-import Person from "./models/person3d";
-import { useNavigate } from "react-router-dom";
-
+import Person from "./models/HumanA3d";
 
 const Management = () => {
     const navigate = useNavigate();
@@ -15,9 +14,11 @@ const Management = () => {
 
     const handleRedirect = () => {
         setIsExpanding(true); // Inicia la animación
+
+        // Espera a que la animación termine antes de redirigir
         setTimeout(() => {
-            location.href = "/Typesm";
-        }, 1500); // Ajusta el tiempo a la duración de la animación
+            navigate("/Typesm"); // Redirige a la nueva página
+        }, 1280); // Ajusta el tiempo para que coincida con la duración de la animación
     };
 
     return (
