@@ -88,6 +88,17 @@ const Erosion = () => {
                                     turbidity={15} // Ajusta la claridad del cielo
                                     exposure={0.8} // Ajusta la exposición del cielo
                                     distance={50}
+
+
+
+
+
+
+
+
+
+
+                                    
                                 />
 
                                 {/* Renderiza el modelo */}
