@@ -4,6 +4,8 @@ import { OrbitControls, useGLTF, Sky } from "@react-three/drei";
 import "./erosion.css";
 import Text3D from "./model/Text3D";
 import ModelSoil3D from "./model/ModelSoil3D"
+import ModelSoil3DPiso from "./model/modelsoil3Dpiso";
+import Jinosauro from "./model/jinosauro";
 import Personsoil from "./model/Personsoil";
 
 const Erosion = () => {
@@ -88,22 +90,12 @@ const Erosion = () => {
                                     turbidity={15} // Ajusta la claridad del cielo
                                     exposure={0.8} // Ajusta la exposición del cielo
                                     distance={50}
-
-
-
-
-
-
-
-
-
-
-                                    
                                 />
 
                                 {/* Renderiza el modelo */}
                                 <ModelSoil3D position={[0, -5, 0]} />
                                 <Text3D />
+                                <Personsoil/> 
                             </Canvas>
                         </div>
 
@@ -202,9 +194,9 @@ const Erosion = () => {
                                 />
 
                                 {/* Renderiza el modelo */}
-                                <ModelSoil3D position={[0, -5, 0]} />
+                                <ModelSoil3DPiso position={[0, -5, 0]} />
                                 <Text3D />
-                                <Personsoil/>
+                                <Jinosauro/>
                             </Canvas>
                         </div>
 
