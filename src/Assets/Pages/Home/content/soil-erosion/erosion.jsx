@@ -4,7 +4,11 @@ import { OrbitControls, useGLTF, Sky } from "@react-three/drei";
 import "./erosion.css";
 import Text3D from "./model/Text3D";
 import ModelSoil3D from "./model/ModelSoil3D"
+import ModelSoil3DPiso from "./model/modelsoil3Dpiso";
+import Jinosauro from "./model/jinosauro";
 import Personsoil from "./model/Personsoil";
+import Roca from "./model/Roca";
+import { Physics, RigidBody } from "@react-three/rapier";
 
 const Erosion = () => {
     return (
@@ -88,22 +92,12 @@ const Erosion = () => {
                                     turbidity={15} // Ajusta la claridad del cielo
                                     exposure={0.8} // Ajusta la exposición del cielo
                                     distance={50}
-
-
-
-
-
-
-
-
-
-
-                                    
                                 />
 
                                 {/* Renderiza el modelo */}
                                 <ModelSoil3D position={[0, -5, 0]} />
                                 <Text3D />
+                                <Personsoil />
                             </Canvas>
                         </div>
 
@@ -133,7 +127,7 @@ const Erosion = () => {
                         <h3>Tipos de erosión del suelo</h3>
 
                         <p>Erosión hídrica (por agua) El agua es una de las principales causas de erosión del suelo. Este tipo de erosión ocurre cuando la lluvia y el agua corriente arrastran las partículas de suelo, lo que puede generar varios tipos de erosión hídrica:</p>
- 
+
                     </div>
                     <div>
                         {/* Contenedor para el modelo 3D con clase 'container-3d' */}
@@ -201,10 +195,30 @@ const Erosion = () => {
                                     distance={50}
                                 />
 
-                                {/* Renderiza el modelo */}
-                                <ModelSoil3D position={[0, -5, 0]} />
+                                
+                                
                                 <Text3D />
-                                <Personsoil/>
+                                
+                                {/* Agregar <Physics /> aquí */}
+                                <Physics gravity={[0, -9.8, 0]}>
+                                    <ambientLight intensity={0.5} />
+                                    <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
+                                    <pointLight position={[-10, 10, -10]} intensity={0.7} />
+                                    <OrbitControls />
+
+                                    {/* Envuelve los elementos dentro de la física */}
+                                    <RigidBody colliders="hull" position={[-4, 12, 20]}>
+                                        <Roca rotation={[0, Math.PI / 4, 0]} />
+                                    </RigidBody>
+                                    <RigidBody mass={4} type="fixed" >
+                                        <mesh 
+                                            rotation={[0, Math.PI / 2, 0]} // Rotar hacia la izquierda (90 grados)
+                                        >
+                                            <ModelSoil3DPiso position={[0, -5, 0]}  />
+                                            <Jinosauro />
+                                        </mesh>
+                                    </RigidBody>
+                                </Physics>
                             </Canvas>
                         </div>
 
