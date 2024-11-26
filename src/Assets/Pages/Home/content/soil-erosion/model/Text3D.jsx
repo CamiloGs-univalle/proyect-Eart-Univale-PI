@@ -18,7 +18,7 @@ const Text3D = () => {
                     }
                 }
             >
-                <h1>Bienvenidos a una erosión del suelo</h1>
+                <h1>Bienvenidos a </h1>
             </Html>
         </>
     )

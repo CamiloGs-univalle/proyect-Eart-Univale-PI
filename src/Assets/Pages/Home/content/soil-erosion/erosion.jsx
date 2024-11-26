@@ -9,6 +9,8 @@ import Jinosauro from "./model/jinosauro";
 import Personsoil from "./model/Personsoil";
 import Roca from "./model/Roca";
 import { Physics, RigidBody } from "@react-three/rapier";
+import DosD from "./2D/DosD";
+import TresD from "./2D/3D/tresD";
 
 const Erosion = () => {
     return (
@@ -96,7 +98,8 @@ const Erosion = () => {
 
                                 {/* Renderiza el modelo */}
                                 <ModelSoil3D position={[0, -5, 0]} />
-                                <Text3D />
+                                <DosD />
+                                <Text3D/>
                                 <Personsoil />
                             </Canvas>
                         </div>
@@ -197,7 +200,7 @@ const Erosion = () => {
 
                                 
                                 
-                                <Text3D />
+                                <TresD />
                                 
                                 {/* Agregar <Physics /> aquí */}
                                 <Physics gravity={[0, -9.8, 0]}>
