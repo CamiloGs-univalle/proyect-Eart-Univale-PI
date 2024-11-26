@@ -10,6 +10,7 @@ import Trash1 from "../models/Trash1";
 import Barrel from "../models/Barrel3D";
 import Text3D from "../2D/3D/Title3d";
 import Text2D from "../2D/TypesModel1"
+import Text22D from "../2D/TypesModel2"
 
 const Types = () => {
   const [content, setContent] = useState(
@@ -108,6 +109,8 @@ const Types = () => {
 
 
           {/* Agregar <Physics /> aquí */}
+          <Text2D />
+
           <Physics gravity={[0, -9.8, 0]}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
