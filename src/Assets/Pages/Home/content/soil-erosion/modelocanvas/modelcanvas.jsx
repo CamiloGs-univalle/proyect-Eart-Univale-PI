@@ -6,6 +6,8 @@ import Jinosauro from "../model/jinosauro";
 import ModelSoil3D from "../model/ModelSoil3D";
 import Personsoil from "../model/Personsoil";
 
+
+
 export const modelcanvauno = (
     <>
         <div className="tierragrieta1">

@@ -17,6 +17,8 @@ export const erosion = (
     </>
 );
 
+
+
 export const infoErosion = (
     <>
         <div class="info-box1">

@@ -4,8 +4,6 @@ import Header from "../../../Header/Header";
 import { erosion, infoErosion, infoTiposErosion } from "./contenido/Contenido";
 import { modelcanvados, modelcanvauno } from "./modelocanvas/modelcanvas";
 
-
-
 const Erosion = () => {
     return (
         <div>
