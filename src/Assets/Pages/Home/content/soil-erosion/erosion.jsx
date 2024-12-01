@@ -1,4 +1,4 @@
-import "./erosion.css";
+import "./erosion.css"
 import React from "react";
 import Header from "../../../Header/Header";
 import { erosion, infoErosion, infoTiposErosion } from "./contenido/Contenido";

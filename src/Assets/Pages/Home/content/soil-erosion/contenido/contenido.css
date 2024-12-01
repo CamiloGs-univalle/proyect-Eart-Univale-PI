@@ -17,7 +17,7 @@
 }
 
 .subtituloSeccion {
-    color: #404040;
+    color: #000000;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-style: italic;
@@ -72,38 +72,7 @@
     /* Espaciado entre elementos de la lista */
 }
 
-.bubbles {
-    position: absolute;
-    bottom: 0;
-    /* Alinear burbujas al fondo */
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    /* No interactuar con las burbujas */
-}
-
-.bubble {
-    position: absolute;
-    bottom: -100px;
-    /* Iniciar fuera de la vista */
-    /* Color de burbuja */
-    border-radius: 50%;
-    animation: bubble 15s infinite;
-    /* Animación de burbujas */
-}
-
-.tierragrieta{
-    border-radius: 400px;
-    background-color: #A6998A;
-    position: relative;
-    width: 34vw;
-    height: 60vh;
-    left: 150px;
-    right: 100px; 
-    overflow: hidden;
-}
-
-.info-box {
+.info-box1 {
     background-color: #f7f0be; /* Color de fondo similar al de la imagen */
     color: #333; /* Color del texto */
     padding: 20px; /* Espacio interno */
@@ -119,20 +88,32 @@
     font-style: italic;
     font-size: 1.3vw;
 }
+.info-box2 {
+    background-color: #f7f0be; /* Color de fondo similar al de la imagen */
+    color: #333; /* Color del texto */
+    padding: 20px; /* Espacio interno */
+    border-radius: 15px; /* Bordes redondeados */
+    border: 2px solid #8c6b23; /* Color y grosor del borde */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 40%; /* Ancho ajustable */ 
+    position: absolute;
+    right: 50%;
+    /*Fuente Chida*/
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.3vw;
+}
 
-.info-box h3 {
-    margin-top: 20px;
-    color: #8c6b23; /* Color del título */
+h3 {
+    position: relative;
+    text-align: center; /* Centrado para mejorar presentación */
+    margin: 10px;
+    color: #8C695D  ; /* Color del título */
+}
+li{
+    margin: 5%;
 }
 
 
-@keyframes bubble {
-    0% {
-        transform: translateX(0) scale(1);
-    }
-
-    100% {
-        transform: translateX(calc(50vw - 50%)) translateY(-100vh) scale(0);
-    }
-}
 
