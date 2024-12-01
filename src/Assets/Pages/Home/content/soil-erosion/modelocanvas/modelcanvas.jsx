@@ -148,7 +148,7 @@ export const modelcanvados = (
                     distance={50}
                 />
                 {/* Renderiza el modelo */}
-                <ModelSoil3DPiso position={[0, -5, 0]}/>
+                
                 <Text3D />
                 <Jinosauro />
                 
