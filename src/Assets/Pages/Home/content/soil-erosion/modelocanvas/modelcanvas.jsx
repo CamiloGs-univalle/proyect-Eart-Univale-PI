@@ -4,7 +4,6 @@ import Text3D from "../model/Text3D";
 import Jinosauro from "../model/jinosauro";
 import ModelSoil3D from "../model/ModelSoil3D";
 import Personsoil from "../model/Personsoil";
-import ModelSoil3DPiso from "../model/modelsoil3Dpiso";
 
 export const modelcanvauno = (
     <>
@@ -147,7 +146,7 @@ export const modelcanvados = (
                     distance={50}
                 />
                 {/* Renderiza el modelo */}
-                <ModelSoil3DPiso position={[0, -5, 0]} />
+                
                 <Text3D />
                 <Jinosauro />
                 
