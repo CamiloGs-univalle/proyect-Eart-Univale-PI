@@ -5,7 +5,6 @@ import Text3D from "../model/Text3D";
 import Jinosauro from "../model/jinosauro";
 import ModelSoil3D from "../model/ModelSoil3D";
 import Personsoil from "../model/Personsoil";
-import ModelSoil3DPiso from "../model/modelsoil3Dpiso";
 
 export const modelcanvauno = (
     <>
