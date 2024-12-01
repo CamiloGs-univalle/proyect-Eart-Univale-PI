@@ -1,3 +1,4 @@
+import "./modelcanvas.css"
 import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Text3D from "../model/Text3D";
@@ -5,9 +6,11 @@ import Jinosauro from "../model/jinosauro";
 import ModelSoil3D from "../model/ModelSoil3D";
 import Personsoil from "../model/Personsoil";
 
+
+
 export const modelcanvauno = (
     <>
-        <div className="tierragrieta">
+        <div className="tierragrieta1">
             <Canvas
                 shadows // Activa las sombras en el lienzo
                 camera={{
@@ -82,7 +85,7 @@ export const modelcanvauno = (
 
 export const modelcanvados = (
     <>
-        <div className="tierragrieta">
+        <div className="tierragrieta2">
             <Canvas
                 shadows // Activa las sombras en el lienzo
                 camera={{
