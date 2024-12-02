@@ -13,6 +13,7 @@ import We from './Assets/Pages/Home/nosotros/we';
 import Erosion from './Assets/Pages/Home/content/soil-erosion/erosion';
 import Typesm from './Assets/Pages/Home/content/improper-waste-management/seccions/Types';
 import Quiz from './Assets/Pages/quiz/quiz';
+import Quizsoil from './Assets/Pages/Home/content/soil-erosion/contenido/quizsoil';
 
 
 
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
   { path: "/Introduction",element: <Home />,},
   { path: "/Map",element: <Map />,},  
   { path: "/soil-erosion",element: <Erosion />,},
+  { path: "/quizsoil",element: <Quizsoil />,},
   { path: "/deforestation",element: <Deforestation />,},
   { path: "/management",element: <Management />,},
   { path: "/Typesm",element: <Typesm />,},
