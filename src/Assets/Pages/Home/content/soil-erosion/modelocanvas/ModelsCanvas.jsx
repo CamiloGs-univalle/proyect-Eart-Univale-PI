@@ -1,4 +1,4 @@
-import "./modelcanvas.css"
+import "./ModelsCanvas.css"
 import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Text3D from "../model/Text3D";
