@@ -6,7 +6,7 @@ const Quizsoil = () => {
     return (
         <>
             <Header />
-            <h1 className="titulo">Quiz Erosión del Suelo</h1>
+            <h1 className="titulo">Erosión del Suelo</h1>
 
             <div>
                 {modelcanvatres}
