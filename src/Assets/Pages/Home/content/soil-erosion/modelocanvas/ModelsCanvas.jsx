@@ -1,10 +1,12 @@
-import "./modelcanvas.css"
+import "./ModelsCanvas.css"
 import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import Text3D from "../model/Text3D";
 import Jinosauro from "../model/jinosauro";
 import ModelSoil3D from "../model/ModelSoil3D";
 import Personsoil from "../model/Personsoil";
+import PisoModelSoil from "../model/PisoModelSoil.jsx";
+
 
 
 
@@ -149,7 +151,7 @@ export const modelcanvados = (
                     distance={50}
                 />
                 {/* Renderiza el modelo */}
-                
+                <PisoModelSoil  position={[0, -5, 0]}/>
                 <Text3D />
                 <Jinosauro />
                 
