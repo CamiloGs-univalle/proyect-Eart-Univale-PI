@@ -1,7 +1,7 @@
-import React, { useRef, useState, useStates } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export function ModelSoil3DPiso(props) {
+export function PisoModelSoil(props) {
   const { nodes, materials } = useGLTF('/model3D/ModelSoil3DPiso.glb')
   return (
     <group {...props} dispose={null}>
@@ -26,4 +26,4 @@ export function ModelSoil3DPiso(props) {
 
 useGLTF.preload('/model3D/ModelSoil3DPiso.glb')
 
-export default ModelSoil3DPiso;
+export default PisoModelSoil;
