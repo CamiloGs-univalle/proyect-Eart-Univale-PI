@@ -24,7 +24,7 @@ export const perdidafertilidad = (
 
 export const Desertificacion = (
     <div className="section section-right">
-        <h3>Factores que Causan la Erosión</h3>
+        <h3>Desertificación</h3>
         <p>
             La erosión prolongada transforma terrenos fértiles en áreas áridas e
             improductivas, afectando a comunidades que dependen de estas tierras.
@@ -33,8 +33,8 @@ export const Desertificacion = (
 );
 
 export const soluciones = (
-    <div className="section section-left">
-        <h3>Soluciones para la Erosión</h3>
+    <div className="section">
+        <h3 className="titulo">Soluciones para la Erosión</h3>
         <p>
             Implementar técnicas como la reforestación, el cultivo en contorno y la
             conservación de suelos puede ayudar a prevenir y mitigar la erosión.
