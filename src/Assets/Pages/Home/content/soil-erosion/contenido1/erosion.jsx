@@ -1,8 +1,8 @@
 import "./erosion.css"
 import React from "react";
-import Header from "../../../Header/Header";
-import { erosion, infoErosion, infoTiposErosion } from "./contenido/Contenido";
+import { erosion, infoErosion, infoTiposErosion } from "./Contenido";
 import { modelcanvados, modelcanvauno } from "./modelocanvas/ModelsCanvas";
+import Header from "../../../../Header/Header";
 
 
 const Erosion = () => {

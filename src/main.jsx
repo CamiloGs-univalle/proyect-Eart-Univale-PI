@@ -10,9 +10,9 @@ import Management from './Assets/Pages/Home/content/improper-waste-management/ma
 import Biodiversity from './Assets/Pages/Home/content/loss-of-biodiversity/biodiversity';
 import Map from './Assets/Pages/Home/Map/map';
 import We from './Assets/Pages/Home/nosotros/we';
-import Erosion from './Assets/Pages/Home/content/soil-erosion/erosion';
 import Typesm from './Assets/Pages/Home/content/improper-waste-management/seccions/Types';
 import Quiz from './Assets/Pages/quiz/quiz';
+import Erosion from './Assets/Pages/Home/content/soil-erosion/contenido1/erosion';
 
 
 
