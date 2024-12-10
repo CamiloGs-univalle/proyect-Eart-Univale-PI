@@ -40,11 +40,7 @@
 }
 
 
-/* Estilos para las secciones */
-.seccion {
-    margin: 20px;
-    /* Espaciado entre secciones */
-}
+
 
 .tituloSeccion {
     display: flex;
