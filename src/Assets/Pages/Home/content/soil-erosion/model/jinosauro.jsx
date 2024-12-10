@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
-export function Jinosauro({ onUpdatePosition }) {
+export function Jinosauro({ onUpdatePosition, onUpdateDirection }) {
     const group = useRef();
     const positionRef = useRef([0, -3.5, 0]);
+    const directionRef = useRef([0, 0, -1]); // Dirección inicial (hacia adelante)
     const activeKeys = useRef(new Set());
     const { nodes, materials, animations } = useGLTF("/model3D/jinosauro.glb");
     const { actions } = useAnimations(animations, group);
@@ -27,8 +28,9 @@ export function Jinosauro({ onUpdatePosition }) {
     };
 
     const moveCharacter = () => {
-        const step = 0.1;
+        const step = 0.5;
         let newPosition = [...positionRef.current];
+        let newDirection = [...directionRef.current];
 
         activeKeys.current.forEach((key) => {
             const [x, y, z] = newPosition;
@@ -36,18 +38,22 @@ export function Jinosauro({ onUpdatePosition }) {
             switch (key) {
                 case "s":
                     setRotation([0, Math.PI, 0]);
+                    newDirection = [0, 0, 1];
                     newPosition = [x, y, z + step];
                     break;
                 case "w":
                     setRotation([0, 0, 0]);
+                    newDirection = [0, 0, -1];
                     newPosition = [x, y, z - step];
                     break;
                 case "d":
                     setRotation([0, -Math.PI / 2, 0]);
+                    newDirection = [1, 0, 0];
                     newPosition = [x + step, y, z];
                     break;
                 case "a":
                     setRotation([0, Math.PI / 2, 0]);
+                    newDirection = [-1, 0, 0];
                     newPosition = [x - step, y, z];
                     break;
                 default:
@@ -57,11 +63,12 @@ export function Jinosauro({ onUpdatePosition }) {
 
         if (JSON.stringify(newPosition) !== JSON.stringify(positionRef.current)) {
             positionRef.current = newPosition;
+            directionRef.current = newDirection;
             setPosition(newPosition);
             setIsMoving(true);
 
-            // Notifica la nueva posición al componente padre
-            onUpdatePosition(newPosition);
+            onUpdatePosition(newPosition); // Notifica nueva posición
+            onUpdateDirection(newDirection); // Notifica nueva dirección
         }
     };
 

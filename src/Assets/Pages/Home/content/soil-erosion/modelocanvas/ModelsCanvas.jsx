@@ -9,49 +9,67 @@ import { useRef, useState } from "react";
 import { Jinosauro } from "../model/jinosauro";
 
 
+
 function FollowDinosaur() {
-    const [dinoPosition, setDinoPosition] = useState([0, -5, 0]); // Posición actual del dinosaurio
-    const [isUserInteracting, setIsUserInteracting] = useState(false); // Indica si el usuario está moviendo la cámara
-    const lastInteractionTime = useRef(Date.now()); // Guarda el último momento de interacción del usuario
+    const [dinoPosition, setDinoPosition] = useState([0, -5, 0]); // Posición del dinosaurio
+    const [dinoDirection, setDinoDirection] = useState([0, 0, -1]); // Dirección del dinosaurio
+    const [isUserInteracting, setIsUserInteracting] = useState(false); // Indica si el usuario interactúa manualmente
+    const lastInteractionTime = useRef(Date.now()); // Tiempo de la última interacción
 
-    const cameraRef = useRef(); // Referencia para la cámara
+    const cameraRef = useRef(); // Referencia a la cámara
 
-    // Configura un temporizador para "soltar" el control de la cámara y permitir el seguimiento al dinosaurio
+    // Lógica para seguir al dinosaurio
     useFrame(({ camera }) => {
         const now = Date.now();
         const [x, y, z] = dinoPosition;
+        const [dx, dy, dz] = dinoDirection; // Dirección actual del dinosaurio
 
+        // Si no hay interacción reciente del usuario
         if (!isUserInteracting && now - lastInteractionTime.current > 1000) {
-            // Mueve la cámara suavemente hacia el dinosaurio si no hay interacción reciente
-            camera.position.lerp({ x: x + 5, y: y + 10, z: z + 45 }, 0.1);
-            camera.lookAt(x, y, z);
+            // Nueva posición de la cámara alrededor del dinosaurio según la dirección
+            const cameraOffset = [
+                x - dx * 50, // Posición relativa según dirección
+                y + 10, // Elevar un poco la cámara
+                z - dz * 50,
+            ];
+
+            // Movimiento suave de la cámara
+            camera.position.lerp({ x: cameraOffset[0], y: cameraOffset[1], z: cameraOffset[2] }, 0.04);
+            camera.lookAt(x, y, z); // Mirar al dinosaurio
         }
     });
 
+    // Inicia la interacción manual
     const handleStartInteraction = () => {
         setIsUserInteracting(true);
     };
 
+    // Finaliza la interacción manual
     const handleEndInteraction = () => {
         setIsUserInteracting(false);
-        lastInteractionTime.current = Date.now(); // Marca la última interacción
+        lastInteractionTime.current = Date.now(); // Actualiza el tiempo de la última interacción
     };
 
     return (
         <>
-            {/* Habilitamos los eventos de interacción en el canvas */}
+            {/* Controles manuales */}
             <OrbitControls
                 enablePan={true}
                 enableZoom={true}
                 enableRotate={true}
-                onStart={handleStartInteraction} // Detecta cuando el usuario empieza a interactuar
-                onEnd={handleEndInteraction} // Detecta cuando el usuario termina de interactuar
+                onStart={handleStartInteraction}
+                onEnd={handleEndInteraction}
             />
-            {/* Renderiza el modelo del dinosaurio */}
-            <Jinosauro onUpdatePosition={(pos) => setDinoPosition(pos)} />
+            {/* Dinosaurio y actualización de dirección */}
+            <Jinosauro
+                onUpdatePosition={(pos) => setDinoPosition(pos)}
+                onUpdateDirection={(dir) => setDinoDirection(dir)}
+            />
         </>
     );
 }
+
+export default FollowDinosaur;
 
 export const modelcanvauno = (
     <>
