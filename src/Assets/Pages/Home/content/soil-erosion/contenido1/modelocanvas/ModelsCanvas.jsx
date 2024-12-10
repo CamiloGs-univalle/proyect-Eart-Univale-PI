@@ -1,12 +1,12 @@
 import "./ModelsCanvas.css"
 import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import Text3D from "../model/Text3D";
-import ModelSoil3D from "../model/ModelSoil3D";
-import Personsoil from "../model/Personsoil";
+import Text3D from "../model/Text3D.jsx";
+import ModelSoil3D from "../model/ModelSoil3D.jsx";
+import Personsoil from "../model/Personsoil.jsx";
 import PisoModelSoil from "../model/PisoModelSoil.jsx";
 import { useRef, useState } from "react";
-import { Jinosauro } from "../model/jinosauro";
+import { Jinosauro } from "../model/jinosauro.jsx";
 
 
 
