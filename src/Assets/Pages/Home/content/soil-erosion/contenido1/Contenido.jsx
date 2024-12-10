@@ -40,17 +40,17 @@ export const infoTiposErosion = (
         <div class="info-box2">
             <h3> Factores que Causan la Erosión </h3>
             <ul>
-                <li>
+                <li className="space">
                     Agua: Las lluvias intensas pueden arrastrar
                     partículas de suelo. Los ríos y torrentes también
                     pueden generar erosión cuando fluyen rápidamente.
                 </li>
-                <li>
+                <li className="space">
                     Viento: En zonas secas, el viento puede levantar
                     y transportar partículas de suelo, especialmente
                     cuando el suelo está desnudo y sin vegetación.
                 </li>
-                <li>
+                <li className="space">
                     Actividad Humana: La deforestación, la agricultura
                     intensiva, y la construcción sin prácticas adecuadas
                     de manejo del agua son responsables de la aceleración
