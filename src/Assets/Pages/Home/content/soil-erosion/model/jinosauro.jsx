@@ -1,14 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 
-export function Jinosauro(props) {
+export function Jinosauro({ onUpdatePosition }) {
     const group = useRef();
-    const cameraRef = useRef(); // Referencia para la cámara
     const positionRef = useRef([0, -3.5, 0]);
     const activeKeys = useRef(new Set());
     const { nodes, materials, animations } = useGLTF("/model3D/jinosauro.glb");
-
     const { actions } = useAnimations(animations, group);
 
     const [position, setPosition] = useState(positionRef.current);
@@ -43,7 +40,7 @@ export function Jinosauro(props) {
                     break;
                 case "w":
                     setRotation([0, 0, 0]);
-                    newPosition = [  x, y, z - step ];
+                    newPosition = [x, y, z - step];
                     break;
                 case "d":
                     setRotation([0, -Math.PI / 2, 0]);
@@ -62,6 +59,9 @@ export function Jinosauro(props) {
             positionRef.current = newPosition;
             setPosition(newPosition);
             setIsMoving(true);
+
+            // Notifica la nueva posición al componente padre
+            onUpdatePosition(newPosition);
         }
     };
 
@@ -83,16 +83,8 @@ export function Jinosauro(props) {
         };
     }, []);
 
-    // Usar `useFrame` para actualizar la posición de la cámara en cada frame
-    useFrame(({ camera }) => {
-        const [x, y, z] = position;
-        // Ajusta la posición de la cámara con un ligero retraso
-        camera.position.lerp({ x: x + 5, y: y + 15, z: z + 55 }, 1.5);
-        camera.lookAt(x, y, z); // Asegúrate de que la cámara siempre mire al dinosaurio
-    });
-
     return (
-        <group ref={group} {...props} dispose={null} position={position} rotation={rotation}>
+        <group ref={group} position={position} rotation={rotation}>
             <group name="Sketchfab_Scene">
                 <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 4.8]}>
                     <group name="root">
@@ -114,5 +106,4 @@ export function Jinosauro(props) {
     );
 }
 
-export default Jinosauro;
 useGLTF.preload("/model3D/Jinosauro.glb");
