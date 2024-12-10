@@ -1,0 +1,41 @@
+/* Estilo general para los contenedores */
+.section {
+    
+    color: #000000;
+    
+    border-radius: 15px;
+    border: 2px solid #dfae45;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    
+    text-align: justify;
+    overflow: hidden;
+    
+}
+
+/* Estilo para las secciones alineadas a la derecha */
+.section-right {
+    margin-left: auto; /* Empuja el contenedor hacia la derecha */
+    margin-right: 400px; /* Espacio en el lado derecho */
+    text-align: right; /* Alineación del texto */
+}
+
+/* Estilo para las secciones alineadas a la izquierda */
+.section-left {
+    margin-right: auto; /* Empuja el contenedor hacia la izquierda */
+    margin-left: 400px; /* Espacio en el lado izquierdo */
+    text-align: left; /* Alineación del texto */
+}
+
+/* Responsivo para que siempre sea centrado en dispositivos pequeños */
+@media (max-width: 768px) {
+    .section {
+        margin: 20px auto; /* Centrado para pantallas pequeñas */
+        width: 90%; /* Reducir ancho */
+        text-align: justify;
+    }
+
+    .section-right,
+    .section-left {
+        margin: 20px auto; /* Quitar alternancia en dispositivos pequeños */
+    }
+}
