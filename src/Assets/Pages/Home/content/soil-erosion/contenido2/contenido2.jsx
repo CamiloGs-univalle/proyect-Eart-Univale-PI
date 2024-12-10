@@ -1,4 +1,4 @@
-import "./contenido.css";
+import "../contenido1/Contenido.css";
 
 export const Agua = (
     <>
