@@ -2,13 +2,9 @@ import { OrbitControls } from "@react-three/drei";
 import Header from "../../Header/Header";
 import "./map.css";
 import ModelMap3D from "./model3D/ModelMap3D";
-import ModelMapBiodiversity3D from "./model3D/ModelMapBiodiversity3D";
-import ModelMapDeforestation3D from "./model3D/ModelMapDeforestation3D";
-import ModelMapManagement3D from "./model3D/ModelMapManagement3D";
-import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
-import Text3DSoil from "./model3D/Text3DSoil";
+
 import { Canvas } from "@react-three/fiber";
-import Text3DManagement from "./model3D/Text3DManagement";
+
 import { Link } from "react-router-dom";
 
 const Map = () => {
@@ -16,13 +12,9 @@ const Map = () => {
   const redirectToSoil = () => {
     <Link to="/management" className="inicio">INICIAR PARTIDA</Link>
   };
-  
+
   const redirectToManagement = () => {
     location.href = "/management"; // Cambia "/management" por la ruta deseada
-  };
-
-  const redirectToDeforestation = () => {
-    window.location.href = "/deforestation"; // Cambia "/deforestation" por la ruta deseada
   };
 
   const redirectToBiodiversity = () => {
@@ -33,45 +25,18 @@ const Map = () => {
     <>
       <Header />
       <div className="container-map3d">
-        <div>
-          <h1>MAPA</h1>
-          <div className="contenedormap">
-            <ModelMap3D className="container-map3d" />
-            <Canvas className="map-canvas" camera={{ position: [0, 90, 90], fov: 60 }}>
-              {/* Luz ambiental */}
-              <ambientLight />
-              <directionalLight position={[10, 10, 10]} intensity={3} />
+        <div className="contenedormap">
+          <Canvas className="map-canvas"
+            camera={{ position: [4, 100, 0], fov: 60 }}
+          >
+            <ambientLight />
+            <directionalLight position={[0, 5, 0]} intensity={10} />
 
-              {/* Modelo del mapa (quieto) */}
-              <ModelMap3D position={[0, 0, 0]} scale={[1, 1, 1]} />
+            <ModelMap3D/>
 
-              {/* Grupo del suelo */}
-              <group position={[-60, 15, -30]}>
-                <Text3DSoil />
-                <ModelMapSoil3D position={[0, 10, -10]} scale={[5, 5, 5]} onClick={redirectToSoil} />
-                
-              </group>
-
-              {/* Grupo de gestión */}
-              <group position={[0, 20, 20]}>
-                <ModelMapManagement3D position={[0, 5, -10]} scale={[4, 4, 4]} onClick={redirectToManagement} />
-                <Text3DManagement />
-              </group>
-
-              {/* Grupo de deforestación */}
-              <group position={[20, 26, -30]}>
-                <ModelMapDeforestation3D position={[0, 0, -10]} scale={[4, 4, 4]} onClick={redirectToDeforestation} />
-              </group>
-
-              {/* Grupo de biodiversidad */}
-              <group position={[70, 10, 20]}>
-                <ModelMapBiodiversity3D position={[0, 10, -10]} scale={[4, 4, 4]} onClick={redirectToBiodiversity} />
-              </group>
-
-              {/* Controles de cámara */}
-              <OrbitControls enablePan={false} enableZoom={false} enableRotate={true} />
-            </Canvas>
-          </div>
+            {/* Controles de cámara */}
+            <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+          </Canvas>
         </div>
       </div>
     </>

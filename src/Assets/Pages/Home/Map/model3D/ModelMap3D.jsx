@@ -1,17 +1,25 @@
+import { Suspense, useMemo } from "react"; // Importamos Suspense y useMemo
 import { useGLTF } from "@react-three/drei"; // Importa la función useGLTF para cargar modelos 3D en formato GLTF
 
-// Definición del componente funcional TrashCan
+// Componente que carga y muestra el modelo 3D del mapa
 const ModelMap3D = (props) => {
-  // Desestructuración del objeto retornado por useGLTF, que contiene los nodos y materiales del modelo GLTF
-  const { nodes, materials } = useGLTF("/model3D/map.glb"); // Carga el modelo 3D desde el archivo GLB ubicado en "modelo3D/earth.glb"
+  // Desestructuración del objeto retornado por useGLTF
+  const { nodes, materials } = useGLTF("/model3D/map.glb");
+
+  // Memoriza las transformaciones para evitar recalcularlas en cada render
+  const transformMap = useMemo(() => ({
+    position: [0, -20, 0], // Centrado horizontalmente y verticalmente
+    rotation: [Math.PI / 2.09, 4.6, 4.68], // Ajusta para que el mapa esté vertical
+    scale: [1.5, 1.5, 1.3], // Escala adecuada
+  }), []);
 
   return (
     <group {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" position={[0, 20.637, -3.653]} rotation={[0, 0, 0]}>
-          <group name="Map_01FBX" rotation={[Math.PI / 3, 0, 0]}>
+        <group name="Sketchfab_model" {...transformMap}>
+          <group name="Map_01FBX">
             <group name="RootNode">
-              <group name="map001" rotation={[-Math.PI / 1.2, 0, 0]} scale={[1.038, 1.038, 1]}>
+              <group name="map001">
                 <mesh
                   name="map001_01_-_Map_0"
                   geometry={nodes['map001_01_-_Map_0'].geometry}
@@ -26,7 +34,8 @@ const ModelMap3D = (props) => {
   );
 };
 
-export default ModelMap3D; // Exporta el componente TrashCan para ser utilizado en otras partes de la aplicación
+// Componente envuelto en Suspense para gestionar la carga del modelo 3D
+export default ModelMap3D;
 
 // Precarga el modelo 3D para mejorar el rendimiento y reducir el tiempo de carga
 useGLTF.preload("/model3D/map.glb");

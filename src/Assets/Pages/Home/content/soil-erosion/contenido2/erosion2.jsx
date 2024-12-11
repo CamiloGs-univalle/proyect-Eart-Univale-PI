@@ -26,6 +26,7 @@ const Erosion2 = () => {
             <div className="section">
                 {Educacion}
             </div>
+            
         </div>
     );
 };
