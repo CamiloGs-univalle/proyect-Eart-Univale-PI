@@ -7,14 +7,15 @@ import Personsoil from "../model/Personsoil.jsx";
 import PisoModelSoil from "../model/PisoModelSoil.jsx";
 import { useRef, useState } from "react";
 import { Jinosauro } from "../model/jinosauro.jsx";
+import { Debug, Physics } from "@react-three/cannon";
 
 
 
 function FollowDinosaur() {
-    const [dinoPosition, setDinoPosition] = useState([0, -5, 0]); // Posición del dinosaurio
+    const [dinoPosition, setDinoPosition] = useState([0, 0, 0]); // Posición del dinosaurio
     const [dinoDirection, setDinoDirection] = useState([0, 0, -1]); // Dirección del dinosaurio
     const [isUserInteracting, setIsUserInteracting] = useState(false); // Indica si el usuario interactúa manualmente
-    const lastInteractionTime = useRef(Date.now()); // Tiempo de la última interacción
+    const lastInteractionTime = useRef(Date.now(0)); // Tiempo de la última interacción
 
     const cameraRef = useRef(); // Referencia a la cámara
 
@@ -136,6 +137,7 @@ export const modelcanvauno = (
                 {/* Renderiza el modelo */}
                 <ModelSoil3D position={[0, -5, 0]} />
                 <Text3D />
+
                 <Personsoil />
             </Canvas>
         </div>
@@ -148,7 +150,7 @@ export const modelcanvados = (
             <Canvas
                 shadows
                 camera={{
-                    position: [0, 10, 50],
+                    position: [0, 100, 0],
                     fov: 20,
                 }}
             >
@@ -169,11 +171,17 @@ export const modelcanvados = (
                 />
                 <Sky sunPosition={[0, -1, -1]} turbidity={15} />
 
-                {/* Seguimiento del dinosaurio */}
-                <FollowDinosaur />
+                <Physics>
+                    <Debug scale={1.1} color="blue"> {/* Agrega Debug aquí */}
+                        {/* Suelo */}
+                        <PisoModelSoil />
+                        {/* Dinosaurio */}
+                        <FollowDinosaur />
+                    </Debug>
+                </Physics>
 
-                {/* Renderiza el piso */}
-                <PisoModelSoil position={[0, -5, 0]} />
+
+
             </Canvas>
         </div>
     </>
