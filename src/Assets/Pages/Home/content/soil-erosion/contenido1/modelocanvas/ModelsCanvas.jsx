@@ -11,6 +11,7 @@ import { Debug, Physics } from "@react-three/cannon";
 
 
 
+
 function FollowDinosaur() {
     const [dinoPosition, setDinoPosition] = useState([0, -20, 0]); // Posición del dinosaurio
     const [dinoDirection, setDinoDirection] = useState([0, 0, -1]); // Dirección del dinosaurio
@@ -171,13 +172,15 @@ export const modelcanvados = (
                 />
                 <Sky sunPosition={[0, -1, -1]} turbidity={15} />
 
-                <Physics>
+
+                <Physics gravity={[0, -9.81, 0]} allowSleep={false}>
                 
                     <Debug color="blue"> {/* Agrega Debug aquí */}
+                    <FollowDinosaur />
                         {/* Suelo */}
-                        <PisoModelSoil />
+                        <PisoModelSoil  />
                         {/* Dinosaurio */}
-                        <FollowDinosaur />
+                        
                     </Debug>
                 </Physics>
 

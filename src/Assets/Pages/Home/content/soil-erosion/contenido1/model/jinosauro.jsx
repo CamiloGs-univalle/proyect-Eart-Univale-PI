@@ -120,7 +120,7 @@ export function Jinosauro({ onUpdatePosition, onUpdateDirection }) {
   return (
     <group ref={group} position={position} rotation={rotation}>
       {/* Colisionador físico */}
-      <mesh ref={physicsRef} visible={false}>
+      <mesh ref={physicsRef} visible={true}>
         <boxGeometry args={[1, 2, 0.5]} />
         <meshStandardMaterial color="red" opacity={0.5} transparent={true} wireframe={true} />
       </mesh>
