@@ -12,7 +12,7 @@ import { Debug, Physics } from "@react-three/cannon";
 
 
 function FollowDinosaur() {
-    const [dinoPosition, setDinoPosition] = useState([0, 0, 0]); // Posición del dinosaurio
+    const [dinoPosition, setDinoPosition] = useState([0, -20, 0]); // Posición del dinosaurio
     const [dinoDirection, setDinoDirection] = useState([0, 0, -1]); // Dirección del dinosaurio
     const [isUserInteracting, setIsUserInteracting] = useState(false); // Indica si el usuario interactúa manualmente
     const lastInteractionTime = useRef(Date.now(0)); // Tiempo de la última interacción
@@ -172,7 +172,8 @@ export const modelcanvados = (
                 <Sky sunPosition={[0, -1, -1]} turbidity={15} />
 
                 <Physics>
-                    <Debug scale={1.1} color="blue"> {/* Agrega Debug aquí */}
+                
+                    <Debug color="blue"> {/* Agrega Debug aquí */}
                         {/* Suelo */}
                         <PisoModelSoil />
                         {/* Dinosaurio */}
