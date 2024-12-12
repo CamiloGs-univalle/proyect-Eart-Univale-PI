@@ -1,6 +1,6 @@
 import Header from "../../../../Header/Header";
 import React from "react";
-import { Agricultura, Agua, Desertificacion, Educacion, perdidafertilidad, soluciones } from "./contenido2";
+import MusicaAmbient, { Agricultura, Agua, Desertificacion, Educacion, perdidafertilidad, soluciones } from "./contenido2";
 import "./erosion2.css"
 
 
@@ -8,6 +8,7 @@ const Erosion2 = () => {
     return (
         <div>
             <Header />
+            <MusicaAmbient/>
             <div className="section">
                 {Agua}
             </div>
