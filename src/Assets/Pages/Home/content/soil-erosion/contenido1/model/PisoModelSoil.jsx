@@ -7,7 +7,7 @@ export function PisoModelSoil(props) {
 
   // Define un plano físico estático para representar el suelo
   const [ref] = usePlane(() => ({
-    position: [0, -10, 0], // Ajusta la posición para coincidir con el modelo
+    position: [0, 0, 0], // Ajusta la posición para coincidir con el modelo
     rotation: [-Math.PI / 2, 0, 0], // Orientación horizontal
   }));
 
@@ -17,9 +17,9 @@ export function PisoModelSoil(props) {
       <mesh ref={ref}>
         <group name="Sketchfab_Scene">
           <group name="Sketchfab_model" rotation={[-Math.PI / 1, 0, 0]}>
-            <group name="09fbx" rotation={[Math.PI / 2, 0, 0]} scale={1}>
+            <group name="09fbx" rotation={[Math.PI / 2, 0, 0]} scale={10}>
               <group name="RootNode">
-                <group name="Plane" rotation={[-Math.PI / 2, 0, 0]} scale={20}>
+                <group name="Plane" rotation={[-Math.PI / 2, 0, 0]} scale={10}>
                   <mesh
                     name="Plane__0"
                     geometry={nodes.Plane__0.geometry}
