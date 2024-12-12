@@ -1,7 +1,8 @@
 import Header from "../../../../Header/Header";
 import React from "react";
-import MusicaAmbient, { Agricultura, Agua, Desertificacion, Educacion, perdidafertilidad, soluciones } from "./contenido2";
+import { Agricultura, Agua, Desertificacion, Educacion, perdidafertilidad, soluciones } from "./contenido2";
 import "./erosion2.css"
+import MusicaAmbient from "../../../../Music/Music_Soil/Pag2";
 
 
 const Erosion2 = () => {
