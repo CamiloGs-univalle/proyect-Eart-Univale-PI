@@ -1,13 +1,14 @@
 import "./ModelsCanvas.css"
 import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import Text3D from "../model/Text3D.jsx";
 import ModelSoil3D from "../model/ModelSoil3D.jsx";
 import Personsoil from "../model/Personsoil.jsx";
 import PisoModelSoil from "../model/PisoModelSoil.jsx";
 import { useRef, useState } from "react";
 import { Jinosauro } from "../model/jinosauro.jsx";
 import { Debug, Physics } from "@react-three/cannon";
+import ModelCoin3D from "../../coin/Coin.jsx";
+
 
 
 
@@ -30,9 +31,9 @@ function FollowDinosaur() {
         if (!isUserInteracting && now - lastInteractionTime.current > 1000) {
             // Nueva posición de la cámara alrededor del dinosaurio según la dirección
             const cameraOffset = [
-                x - dx * 50, // Posición relativa según dirección
+                x - dx * 20, // Posición relativa según dirección
                 y + 10, // Elevar un poco la cámara
-                z - dz * 50,
+                z - dz * 20,
             ];
 
             // Movimiento suave de la cámara
@@ -72,6 +73,8 @@ function FollowDinosaur() {
 }
 
 export default FollowDinosaur;
+
+
 
 export const modelcanvauno = (
     <>
@@ -137,9 +140,12 @@ export const modelcanvauno = (
 
                 {/* Renderiza el modelo */}
                 <ModelSoil3D position={[0, -5, 0]} />
-                <Text3D />
 
-                <Personsoil />
+                <Physics>
+                    <Personsoil />
+                    <ModelCoin3D/>
+                </Physics>
+
             </Canvas>
         </div>
     </>
@@ -152,7 +158,7 @@ export const modelcanvados = (
                 shadows
                 camera={{
                     position: [0, 100, 0],
-                    fov: 20,
+                    fov: 60,
                 }}
             >
                 {/* Configuración de OrbitControls */}
@@ -174,14 +180,15 @@ export const modelcanvados = (
 
 
                 <Physics gravity={[0, -9.81, 0]} allowSleep={false}>
-                
+
                     <Debug color="blue"> {/* Agrega Debug aquí */}
-                    <FollowDinosaur />
+                        <FollowDinosaur />
                         {/* Suelo */}
-                        <PisoModelSoil  />
+                        <PisoModelSoil />
                         {/* Dinosaurio */}
-                        
+
                     </Debug>
+                    <ModelCoin3D/>
                 </Physics>
 
 
