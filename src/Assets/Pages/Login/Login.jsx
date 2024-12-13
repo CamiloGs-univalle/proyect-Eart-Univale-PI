@@ -10,13 +10,15 @@ import useAuthStore from "../../../Stores/use-auth-store";
 import UserDAO from "../../DAO/UserDaAO";
 
 // Importamos el hook para la navegación entre rutas en React
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Importamos el componente de encabezado
 import Header from "../../Pages/Header/Header";
 
 // Importamos React para la definición de componentes funcionales
 import React from "react";
+
+
 
 // Definimos el componente funcional Login, que será exportado para ser usado en otras partes de la aplicación
 export default function Login() {
@@ -59,6 +61,8 @@ export default function Login() {
         }
     }, [user, navigate]); // Dependencias: el efecto se ejecutará cuando user o navigate cambien
 
+
+
     // Retornamos el JSX que define la interfaz de usuario del componente
     return (
         <>
@@ -73,11 +77,19 @@ export default function Login() {
                                 ¡ Bienvenido {user.displayName} ! {/* Muestra el nombre del usuario */}
                             </p>
                             <p className="present-text"> {/* Texto de presentación */}
-                                Hola {user.displayName}, si deseas cerrar sesión, por favor ve a tu perfil y en el menu desplegable oreciona
-                                cerrar sesion 
+                                Aprenderás sobre la importancia de cuidar el medio ambiente
+                                mientras recolectas monedas y evitas desperdicios.
+                            </p>
+                            <p>
+
                             </p>
 
-
+                            <ul className="button-container-melo">
+                                <li className="button-melo" >
+                                    <span className="icon-melo">♻️</span>
+                                    <Link  to="/introduction" className="title-melo">Iniciar</Link>
+                                </li>
+                            </ul>
 
 
                         </div>
@@ -121,7 +133,7 @@ export default function Login() {
                         </button>
                     </div>
                 )}
-            </div>
+            </div >
         </>
     );
 }   
