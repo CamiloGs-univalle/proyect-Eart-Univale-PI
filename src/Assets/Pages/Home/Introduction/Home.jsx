@@ -27,12 +27,10 @@ const Home = () => {
 
             <button className="btn">
               <div className="wrapper">
-                <ul className="button-container-melo">
-                  <li className="button-melo" >
-                    <span className="icon-melo">🗺️</span>
-                    <Link to="/map" className="title-melo">Mapa</Link>
-                  </li>
-                </ul>
+                <li className="start-button">
+                  <span className="start-icon">🗺️</span>
+                  <Link to="/introduction" className="start-button-title">Mapa</Link>
+                </li>
               </div>
             </button>
 
