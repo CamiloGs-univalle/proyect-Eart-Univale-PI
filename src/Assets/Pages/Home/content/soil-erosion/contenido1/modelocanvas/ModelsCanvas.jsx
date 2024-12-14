@@ -4,10 +4,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Debug, Physics } from "@react-three/cannon";
 import { Jinosauro } from "../../model/jinosauro";
-import Personsoil from "../../model/Personsoil";
-import ModelCoin3D from "../../coin/Coin";
 import PisoModelSoil from "../../model/PisoModelSoil";
-import Model1Soil from "../../model/Model1Soil";
+import Model1Soil1 from "../../model/Model1Soil1";
 
 function FollowDinosaur() {
     const [dinoPosition, setDinoPosition] = useState([0, -20, 0]);
@@ -63,7 +61,7 @@ function FollowDinosaur() {
     );
 }
 
-function SkyEnvironment() {
+export const SkyEnvironment = () => {
     return (
         <Sky
             sunPosition={[0, 1, 0]}
@@ -78,9 +76,12 @@ function SkyEnvironment() {
     );
 }
 
-export const modelcanvauno = (
+export const model1canvauno = (
     <div className="tierragrieta1">
-        <Canvas shadows>
+        <Canvas shadow
+            camera={{ position: [20, 20, 70], fov: 60 }}
+            
+        >
             <OrbitControls />
 
             {/* Lighting */}
@@ -98,22 +99,18 @@ export const modelcanvauno = (
             <pointLight position={[5, 10, 5]} intensity={0.5} color="#fff59d" />
 
             <SkyEnvironment />
-
-            <Model1Soil />
-
             <Physics>
-                <Personsoil />
-                <ModelCoin3D />
+                <Model1Soil1 position = {[0, -16, 0]} />
             </Physics>
         </Canvas>
     </div>
 );
 
-export const modelcanvados = (
+export const model1canvados = (
     <div className="tierragrieta2">
         <Canvas
             shadows
-            camera={{ position: [0, 100, 0], fov: 60 }}
+            camera={{ position: [0, 30, 50], fov: 60 }}
         >
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
 
@@ -122,12 +119,10 @@ export const modelcanvados = (
 
             <SkyEnvironment />
 
-            <Physics gravity={[0, -9.81, 0]} allowSleep={false}>
+            <Physics gravity={[0, -9.81, 0]} allowSleep={true}>
                 <Debug color="blue">
-                    <FollowDinosaur />
                     <PisoModelSoil />
                 </Debug>
-                <ModelCoin3D />
             </Physics>
         </Canvas>
     </div>
