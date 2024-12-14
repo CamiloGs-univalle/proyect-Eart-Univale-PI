@@ -8,6 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import { Link } from "react-router-dom";
 import { Physics } from "@react-three/cannon";
 import { Jinosauro } from "../content/soil-erosion/contenido1/model/jinosauro";
+import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
 
 const Map = () => {
   // Funciones de redirección
@@ -37,8 +38,9 @@ const Map = () => {
             <Physics gravity={[0, -9.8, 0]}>
               <Jinosauro />
               <ModelMap3D />
-
             </Physics>
+
+            <ModelMapSoil3D position={[-90,-20, -40]}  />
 
             {/* Controles de cámara */}
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />

@@ -26,7 +26,7 @@ const ModelMapSoil3D = (props) => {
 
   return (
     <group {...props} ref={soilRef} dispose={null}>
-      <group rotation={[-Math.PI / 0.1, 0, 0]}>
+      <group rotation={[-Math.PI / 0.1, 0, 0]} scale={10}>
         {meshes.map(({ name, geometry, material, position, scale }) => (
           <mesh
             key={name}

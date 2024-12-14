@@ -29,7 +29,7 @@ const Home = () => {
               <div className="wrapper">
                 <li className="start-button">
                   <span className="start-icon">🗺️</span>
-                  <Link to="/introduction" className="start-button-title">Mapa</Link>
+                  <Link to="/map" className="start-button-title">Mapa</Link>
                 </li>
               </div>
             </button>
