@@ -67,25 +67,19 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 4em;
-    width: 12em;
     background: transparent;
     border: none;
     cursor: pointer;
-    margin: 50px;
+    margin: 5%;
     /* Agrega un margen superior significativo */
 }
 
 .wrapper {
     display: flex;
-    
     align-items: center;
-    height: 2em;
-    width: 8em;
     position: absolute;
     background: transparent;
 }
-
 
 /* Nuevo estilo para el contenedor de contenido */
 .text-container {
@@ -94,7 +88,7 @@ p {
     padding-right: 10px;
     /* Espacio entre el texto y la escena 3D */
     height: 480px;
-
+    font-size:1.7cap;
 }
 
 /* Ajuste para el contenedor de la escena 3D */

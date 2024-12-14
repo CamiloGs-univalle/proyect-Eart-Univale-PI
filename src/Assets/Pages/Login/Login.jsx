@@ -39,7 +39,7 @@ export default function Login() {
                 <>
                     <Header />
                     <div>
-                        <h1 className="welcome-message">Bienvenido {user.displayName}!</h1>
+                        <h1 className="welcome-message">¡Bienvenido {user.displayName}!</h1>
                         <div className="content-container">
                             {/* Columna izquierda: Contenido del texto */}
                             <div className="intro-box">
