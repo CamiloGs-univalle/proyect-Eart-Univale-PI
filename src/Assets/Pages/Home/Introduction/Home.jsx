@@ -25,14 +25,14 @@ const Home = () => {
             </p>
 
 
-            <button className="btn">
+            <div className="btn">
               <div className="wrapper">
                 <li className="start-button">
                   <span className="start-icon">🗺️</span>
                   <Link to="/map" className="start-button-title">Mapa</Link>
                 </li>
               </div>
-            </button>
+            </div>
 
 
 

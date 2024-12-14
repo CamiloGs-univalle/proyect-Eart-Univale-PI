@@ -14,7 +14,7 @@ const ModelPajaroMap = (props) => {
 
     
     useEffect(() => {
-        if (actions["ArmatureAction"]) {
+        if (actions["ArmatureAction"])  {
             const action = actions["ArmatureAction"];
             action.reset();
             action.setLoop(THREE.LoopRepeat); 

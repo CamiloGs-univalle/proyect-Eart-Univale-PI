@@ -7,7 +7,7 @@ import { Canvas } from "@react-three/fiber";
 
 import { Link } from "react-router-dom";
 import { Physics } from "@react-three/cannon";
-import { Jinosauro } from "../content/soil-erosion/contenido1/model/jinosauro";
+
 import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
 import ModelPajaroMap from "./model3D/ModelPajaro_map";
 
