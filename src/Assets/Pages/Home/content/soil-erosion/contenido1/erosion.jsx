@@ -11,7 +11,7 @@ const Erosion = () => {
     return (
         <div>
             <Header />
-            <MusicaAmbient/>
+            <MusicaAmbient />
             <div className="primeraParte">
                 {erosion}
             </div>
@@ -19,11 +19,16 @@ const Erosion = () => {
                 {infoErosion}
                 {modelcanvauno}
             </div>
-            <div className="terceraParte"> 
+            <div className="terceraParte">
                 {infoTiposErosion}
                 {modelcanvados}
             </div>
-            <Link to ="/erosion2" >erosss</Link>
+            <div>
+                <li className="start-button">
+                    <span className="start-icon">🏜️</span>
+                    <Link to="/erosion2" className="start-button-title">Mapa</Link>
+                </li>
+            </div>
 
         </div>
     );

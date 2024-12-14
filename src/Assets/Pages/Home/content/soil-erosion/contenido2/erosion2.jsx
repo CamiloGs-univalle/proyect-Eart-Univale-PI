@@ -13,12 +13,14 @@ const Erosion2 = () => {
             <div className="section">
                 {Agua}
             </div>
+            
             <div className="section">
                 {perdidafertilidad}
             </div>
             <div className="section">
                 {Desertificacion}
             </div>
+
             <div className="section">
                 {soluciones}
             </div>
