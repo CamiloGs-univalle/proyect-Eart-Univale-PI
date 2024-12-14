@@ -6,6 +6,8 @@ import { Debug, Physics } from "@react-three/cannon";
 import { Jinosauro } from "../../model/jinosauro";
 import PisoModelSoil from "../../model/PisoModelSoil";
 import Model1Soil1 from "../../model/Model1Soil1";
+import { Model1Text1, Model1Text2 } from "../../ModelText/Model1Text1";
+
 
 function FollowDinosaur() {
     const [dinoPosition, setDinoPosition] = useState([0, -20, 0]);
@@ -101,7 +103,11 @@ export const model1canvauno = (
             <SkyEnvironment />
             <Physics>
                 <Model1Soil1 position = {[0, -16, 0]} />
+                {Model1Text1}
             </Physics>
+            
+            
+          
         </Canvas>
     </div>
 );
@@ -110,7 +116,7 @@ export const model1canvados = (
     <div className="tierragrieta2">
         <Canvas
             shadows
-            camera={{ position: [0, 30, 50], fov: 60 }}
+            camera={{ position: [0, 20, 50], fov: 60 }}
         >
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
 
@@ -120,6 +126,7 @@ export const model1canvados = (
             <SkyEnvironment />
 
             <Physics gravity={[0, -9.81, 0]} allowSleep={true}>
+                {Model1Text2}
                 <Debug color="blue">
                     <PisoModelSoil />
                 </Debug>

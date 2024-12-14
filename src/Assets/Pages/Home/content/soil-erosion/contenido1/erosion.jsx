@@ -23,10 +23,10 @@ const Erosion = () => {
                 {infoTiposErosion}
                 {model1canvados}
             </div>
-            <div>
+            <div className="botonSoil">
                 <li className="start-button">
                     <span className="start-icon">🏜️</span>
-                    <Link to="/erosion2" className="start-button-title">Causas</Link>
+                    <Link to="/erosion2" className="start-button-title">Consecuencias</Link>
                 </li>
             </div>
 
