@@ -3,4 +3,8 @@
     padding: 20px; /* Opcional: Espaciado interno */
 }
 
-
+.botonSoil{
+    width: 40%; /* Ancho ajustable */ 
+    position: absolute;
+    right: 5%;
+}

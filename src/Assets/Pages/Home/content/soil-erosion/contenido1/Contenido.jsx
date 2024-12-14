@@ -22,7 +22,6 @@ export const erosion = (
 export const infoErosion = (
     <>
         <div class="info-box1">
-            <h3>¿Qué es la Erosión del Suelo?</h3>
             <p>
                 La erosión del suelo se refiere al desplazamiento
                 o desgaste del suelo superficial debido a la acción
@@ -38,7 +37,6 @@ export const infoErosion = (
 export const infoTiposErosion = (
     <>
         <div class="info-box2">
-            <h3> Factores que Causan la Erosión </h3>
             <ul>
                 <li className="space">
                     Agua: Las lluvias intensas pueden arrastrar
