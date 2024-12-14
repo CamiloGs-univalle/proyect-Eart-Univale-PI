@@ -3,7 +3,7 @@ import "./contenido2.css"
 
 export const Agua = (
     <div className="sections">
-        <h1 className="titulo">Consecuencias y soluciones</h1>
+        <h1 className="titulo">Consecuencias y Soluciones</h1>
         <p>
             En esta página interactiva, descubrirás cómo la erosión del suelo afecta
             a nuestro planeta y cómo podemos prevenirla de manera efectiva. Con
@@ -35,8 +35,8 @@ export const Desertificacion = (
 );
 
 export const soluciones = (
-    <div className="section">
-        <h3 className="titulo">Soluciones para la Erosión</h3>
+    <div className="sections">
+        <h1 className="titulo">Soluciones para la Erosión</h1>
         <p>
             Implementar técnicas como la reforestación, el cultivo en contorno y la
             conservación de suelos puede ayudar a prevenir y mitigar la erosión.

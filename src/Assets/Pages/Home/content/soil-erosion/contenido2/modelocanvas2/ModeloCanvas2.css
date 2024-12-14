@@ -1,0 +1,19 @@
+.model2-conteiner1, .model2-conteiner4{
+    border-radius: 40px;
+    position: relative;
+    width: 34vw;
+    height: 50vh;
+    left: 130px;
+    right: 1px; 
+    overflow: hidden;
+}
+
+
+.model2-conteiner2, .model2-conteiner3{
+    border-radius: 40px;
+    position:relative;
+    width: 34vw;
+    height: 50vh;
+    left: 57%;
+    overflow: hidden;
+}
