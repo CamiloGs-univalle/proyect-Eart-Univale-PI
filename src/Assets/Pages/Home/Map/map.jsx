@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { Physics } from "@react-three/cannon";
 import { Jinosauro } from "../content/soil-erosion/contenido1/model/jinosauro";
 import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
+import ModelPajaroMap from "./model3D/ModelPajaro_map";
 
 const Map = () => {
   // Funciones de redirección
@@ -41,6 +42,7 @@ const Map = () => {
             </Physics>
 
             <ModelMapSoil3D position={[-90,-20, -40]}  />
+            <ModelPajaroMap/>
 
             {/* Controles de cámara */}
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
