@@ -1,34 +1,39 @@
-import { useAnimations, useGLTF } from "@react-three/drei"; // Importa la función useGLTF para cargar modelos 3D en formato GLTF
-import React , { useEffect, useRef, useState } from "react";
+import { useAnimations, useGLTF } from "@react-three/drei";
+import * as THREE from "three"; // Importamos THREE para usar LoopRepeat
+import React, { useEffect, useRef, useState } from "react";
 
-
-
-// Definición del componente funcional TrashCan
 const ModelPajaroMap = (props) => {
-    // Desestructuración del objeto retornado por useGLTF, que contiene los nodos y materiales del modelo GLTF
     const group = useRef();
     const positionRef = useRef([-3, 0.4, 6]); // Ref para rastrear la posición actual
     const activeKeys = useRef(new Set()); // Almacenar teclas activas
     const [isMoving, setIsMoving] = useState(false);
-    const { nodes, materials, animations } = useGLTF("/model3D/pajaroMap.glb"); // Carga el modelo 3D desde el archivo GLB ubicado en "modelo3D/earth.glb"
-    const { actions } = useAnimations(animations, group)
+    const { nodes, materials, animations } = useGLTF("/model3D/pajaroMap.glb"); // Carga el modelo 3D desde el archivo GLB
+    const { actions } = useAnimations(animations, group);
 
-    console.log(actions);
-    // Activar o detener la animación de caminar
-      useEffect(() => {
-        if (isMoving) {
-          actions['get']?.play();
-        } else {
-          actions['get']?.stop();
+   
+
+    
+    useEffect(() => {
+        if (actions["ArmatureAction"]) {
+            const action = actions["ArmatureAction"];
+            action.reset();
+            action.setLoop(THREE.LoopRepeat); 
+            action.play(); 
         }
-      }, [isMoving, actions]);
+
+   
+        return () => {
+            if (actions["ArmatureAction"]) {
+                actions["ArmatureAction"].stop();
+            }
+        };
+    }, [actions]);
 
     // Manejo de eventos de teclado
     const handleKeyDown = (event) => {
         const key = event.key.toLowerCase();
         activeKeys.current.add(key); // Agrega la tecla al conjunto activo
         moveCharacter(); // Mueve el personaje
-        
     };
 
     const handleKeyUp = (event) => {
@@ -43,25 +48,20 @@ const ModelPajaroMap = (props) => {
         const step = 0.1; // Ajusta la distancia de movimiento (más lento)
         let newPosition = [...positionRef.current]; // Copia de la posición actual
 
-        // Recorre todas las teclas activas
         activeKeys.current.forEach((key) => {
             const [x, y, z] = newPosition;
 
             switch (key) {
-                case 's': // Frente
-                    setRotation([0, Math.PI, 0]);
+                case "s": // Frente
                     newPosition = [x, y, z - step];
                     break;
-                case 'w': // Atrás
-                    setRotation([0, 0, 0]);
+                case "w": // Atrás
                     newPosition = [x, y, z + step];
                     break;
-                case 'd': // Derecha
-                    setRotation([0, -Math.PI / 2, 0]);
+                case "d": // Derecha
                     newPosition = [x - step, y, z];
                     break;
-                case 'a': // Izquierda
-                    setRotation([0, Math.PI / 2, 0]);
+                case "a": // Izquierda
                     newPosition = [x + step, y, z];
                     break;
                 default:
@@ -69,32 +69,23 @@ const ModelPajaroMap = (props) => {
             }
         });
 
-        // Actualiza la posición solo si hay un cambio
         if (JSON.stringify(newPosition) !== JSON.stringify(positionRef.current)) {
-            positionRef.current = newPosition; // Actualiza el ref de posición
-            setPosition(newPosition); // Actualiza el estado
+            positionRef.current = newPosition;
             setIsMoving(true); // Activa la animación de caminar
         }
     };
 
-
-
     // Agregar y eliminar eventos de teclado
     useEffect(() => {
-        window.addEventListener('keydown', handleKeyDown);
-        window.addEventListener('keyup', handleKeyUp);
+        window.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("keyup", handleKeyUp);
 
         return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-            window.removeEventListener('keyup', handleKeyUp);
+            window.removeEventListener("keydown", handleKeyDown);
+            window.removeEventListener("keyup", handleKeyUp);
         };
     }, []);
 
-
-
-
-
-    
     return (
         <group ref={group} {...props} dispose={null}>
             <group name="Sketchfab_Scene">
@@ -103,7 +94,8 @@ const ModelPajaroMap = (props) => {
                         <group
                             name="Sun"
                             position={[-4.323, -22.57, 15.986]}
-                            rotation={[0.934, -0.304, -0.195]}>
+                            rotation={[0.934, -0.304, -0.195]}
+                        >
                             <group name="Sun_1" />
                         </group>
                         <group name="Armature" position={[0, 0.748, -0.934]}>
@@ -128,11 +120,9 @@ const ModelPajaroMap = (props) => {
             </group>
         </group>
     );
-
-
 };
 
-export default ModelPajaroMap; // Exporta el componente TrashCan para ser utilizado en otras partes de la aplicación
+export default ModelPajaroMap;
 
 // Precarga el modelo 3D para mejorar el rendimiento y reducir el tiempo de carga
 useGLTF.preload("/model3D/pajaroMap.glb");
