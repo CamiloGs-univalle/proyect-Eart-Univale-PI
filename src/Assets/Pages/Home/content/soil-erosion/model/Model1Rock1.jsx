@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useGLTF, Plane, Text } from '@react-three/drei'
-import { useSphere } from '@react-three/cannon';
 
 export function Model1Rock1(props) {
     const { nodes, materials } = useGLTF('/model3D/rock.glb')

@@ -7,6 +7,8 @@ import Model2Soil1 from "../../model/Model2Soil1";
 import Model2Soil2 from "../../model/Model2Soil2";
 import Model2Soil3 from "../../model/Model2Soil3";
 import Model2Soil4 from "../../model/Model2Soil4";
+import ModelCoin3D from "../../coin/ModelCoin3D";
+import Model2Anima1 from "../../model/Model2Anima1";
 
 
 export const model2canvauno = (
@@ -37,7 +39,10 @@ export const model2canvauno = (
                 <Debug color="blue">
                     <Model2Soil1 position={[0, 0, 0]} />
                 </Debug>
+
+                <Model2Anima1/>
             </Physics>
+            <ModelCoin3D/>
         </Canvas>
     </div>
 );
