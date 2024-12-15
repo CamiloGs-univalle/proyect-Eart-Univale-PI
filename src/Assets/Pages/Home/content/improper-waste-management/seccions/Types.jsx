@@ -34,29 +34,29 @@ const Types = () => {
 
 
       <div className="page-container">
-      <Canvas
-      style={{
-        top:-50,
-        width: 500,
-        height: 200
-      }}
+        <Canvas
+          style={{
+            top: -50,
+            width: 500,
+            height: 200
+          }}
           camera={
             {
               position: [0, 0, 10],
               fov: 50,
-              
+
             }
           }
-          
-          >
-            <OrbitControls/>
-            <Text3D />
-          </Canvas>
+
+        >
+          <OrbitControls />
+          <Text3D />
+        </Canvas>
 
         <div className="content-box">
 
           <h2>{content}</h2>
-          
+
         </div>
 
 
@@ -108,16 +108,20 @@ const Types = () => {
 
           {/* Agregar <Physics /> aquí */}
           <Physics gravity={[0, -9.8, 0]}>
+            
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
             <pointLight position={[-10, 10, -10]} intensity={0.7} />
             <OrbitControls />
 
             {/* Envuelve los elementos dentro de la física */}
-            <RigidBody colliders="hull" position={[-4, 12, 20]}>
+            <RigidBody
+              colliders="hull" position={[-4, 12, 20]}>
               <Barrel rotation={[0, Math.PI / 4, 0]} />
             </RigidBody>
-            <RigidBody mass={4} type="fixed" >
+
+            <RigidBody
+              mass={4} type="fixed" >
               <mesh onClick={handleModelClickfactory}
                 rotation={[0, Math.PI / 2, 0]} // Rotar hacia la izquierda (90 grados)
               >

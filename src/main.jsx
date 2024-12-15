@@ -14,6 +14,7 @@ import Typesm from './Assets/Pages/Home/content/improper-waste-management/seccio
 import Quiz from './Assets/Pages/quiz/quiz';
 import Erosion from './Assets/Pages/Home/content/soil-erosion/contenido1/erosion';
 import Erosion2 from './Assets/Pages/Home/content/soil-erosion/contenido2/erosion2';
+import { MarcadorProvider } from './Assets/Pages/Home/content/soil-erosion/Quiz/MarcadorContext';
 
 
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <MarcadorProvider>
+      <RouterProvider router={router} />
+    </MarcadorProvider>
+    
+
   </StrictMode>
 )
