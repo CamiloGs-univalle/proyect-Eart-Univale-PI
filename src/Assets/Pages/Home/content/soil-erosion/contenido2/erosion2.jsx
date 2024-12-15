@@ -4,6 +4,7 @@ import { Agricultura, Agua, Desertificacion, Educacion, perdidafertilidad, soluc
 
 import MusicaAmbient from "../../../../Music/Music_Soil/Pag2";
 import { model2canvacuatro, model2canvados, model2canvatres, model2canvauno } from "./modelocanvas2/ModeloCanvas2";
+import { Link } from "react-router-dom";
 
 
 const Erosion2 = () => {
@@ -12,7 +13,7 @@ const Erosion2 = () => {
             <Header />
             <div className="section">
                 {Agua}
-                
+
             </div>
 
             <div className="section">
@@ -36,7 +37,13 @@ const Erosion2 = () => {
                 {Educacion}
                 {model2canvacuatro}
             </div>
-            
+            <div className="botonSoil">
+                <li className="start-button">
+                    <span className="start-icon">🏜️</span>
+                    <Link to="/Quiz" className="start-button-title">Consecuencias</Link>
+                </li>
+            </div>
+
         </div>
     );
 };

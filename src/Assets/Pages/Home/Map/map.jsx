@@ -37,7 +37,6 @@ const Map = () => {
             <directionalLight position={[0, 5, 0]} intensity={10} />
 
             <Physics gravity={[0, -9.8, 0]}>
-              <Jinosauro />
               <ModelMap3D />
             </Physics>
 
