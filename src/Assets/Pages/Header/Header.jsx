@@ -1,6 +1,7 @@
 import "./Header.css"; // Importa los estilos del archivo Header.css
 import { Link } from "react-router-dom"; // Importa el componente Link de react-router-dom para la navegación
 import useAuthStore from "../../../Stores/use-auth-store";
+import ScoreBoard from "../Home/content/soil-erosion/Quiz/ScoreBoard";
 
 // Definición del componente Header como una función de React
 const Header = () => {
@@ -32,6 +33,13 @@ const Header = () => {
             <li>
               <Link to="/Quiz">Quiz</Link>
             </li>
+
+
+            <li>
+              <ScoreBoard/>
+            </li>
+
+            
           </ul>
           <ul className="nav-right">
             <li className="dropdown">
