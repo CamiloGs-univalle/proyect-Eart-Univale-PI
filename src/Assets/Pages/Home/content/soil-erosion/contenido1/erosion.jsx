@@ -11,7 +11,6 @@ const Erosion = () => {
     return (
         <div>
             <Header />
-            <MusicaAmbient />
             <div className="primeraParte">
                 {erosion}
             </div>
