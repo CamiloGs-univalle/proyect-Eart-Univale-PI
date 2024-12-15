@@ -2,11 +2,17 @@ import "./ModelsCanvas.css";
 import { OrbitControls, Sky } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { Debug, Physics } from "@react-three/cannon";
 import { Jinosauro } from "../../model/jinosauro";
 import PisoModelSoil from "../../model/PisoModelSoil";
 import Model1Soil1 from "../../model/Model1Soil1";
 import { Model1Text1, Model1Text2 } from "../../ModelText/Model1Text1";
+import Model1Rock1 from "../../model/Model1Rock1";
+import Model1Rock2 from "../../model/Model1Rock2";
+
+import { RigidBody, Physics } from "@react-three/rapier";
+
+
+
 
 
 function FollowDinosaur() {
@@ -81,8 +87,8 @@ export const SkyEnvironment = () => {
 export const model1canvauno = (
     <div className="tierragrieta1">
         <Canvas shadow
-            camera={{ position: [20, 20, 70], fov: 60 }}
-            
+            camera={{ position: [15, 15, 70], fov: 60 }}
+
         >
             <OrbitControls />
 
@@ -102,34 +108,41 @@ export const model1canvauno = (
 
             <SkyEnvironment />
             <Physics>
-                <Model1Soil1 position = {[0, -16, 0]} />
+
+
+                <Model1Soil1 position={[0, -16, 0]} />
                 {Model1Text1}
             </Physics>
-            
-            
-          
+
+
+
         </Canvas>
     </div>
 );
-
 export const model1canvados = (
     <div className="tierragrieta2">
-        <Canvas
-            shadows
-            camera={{ position: [0, 20, 50], fov: 60 }}
-        >
+        <Canvas shadows camera={{ position: [0, 20, 50], fov: 60 }}>
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
-
             <ambientLight intensity={0.3} color="#ffffff" />
             <directionalLight position={[10, 15, 10]} intensity={1.2} color="#ffddaa" castShadow />
-
             <SkyEnvironment />
 
-            <Physics gravity={[0, -9.81, 0]} allowSleep={true}>
-                {Model1Text2}
-                <Debug color="blue">
+            <Physics gravity={[0, -9.81, 0]} colliders="hull">
+                {/* Piso */}
+                <RigidBody>
                     <PisoModelSoil />
-                </Debug>
+                </RigidBody>
+
+
+                {/* Roca 1 */}
+                <RigidBody colliders="hull" position={[20, 0, -20]} restitution={0.5} friction={0.7}>
+                    <Model1Rock1 />
+                </RigidBody>
+
+                {/* Roca 2 */}
+                <RigidBody colliders="hull" position={[-20, 10, 40]} restitution={0.5} friction={0.7}>
+                    <Model1Rock2 />
+                </RigidBody>
             </Physics>
         </Canvas>
     </div>

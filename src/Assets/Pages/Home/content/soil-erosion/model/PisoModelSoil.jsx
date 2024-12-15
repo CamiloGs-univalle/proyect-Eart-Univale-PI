@@ -20,16 +20,12 @@ export function PisoModelSoil(props) {
   }, []);
 
   // Define un plano físico estático para representar el suelo
-  const [ref] = usePlane(() => ({
-    position: [0, 0, 0], // Asegúrate de que coincide con el modelo 3D
-    rotation: [-Math.PI / 2, 0, 0], // Orientación horizontal
-    args: [planeSize[0] * 1, planeSize[1] * 1], // Aumenta el tamaño si es necesario
-  }));
+  
 
   return (
     <group {...props} dispose={null}>
       {/* Plano físico oculto para colisiones */}
-      <mesh ref={ref} visible={false}>
+      <mesh  visible={true} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={planeSize} />
         <meshStandardMaterial color="blue" opacity={0.5} transparent />
       </mesh>
