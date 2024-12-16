@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { usePlane } from '@react-three/cannon';  // Para el plano con colisión
 
 export function Model2Soil4(props) {
   const { nodes, materials } = useGLTF('/model3D/aprende.glb');
@@ -39,9 +40,16 @@ export function Model2Soil4(props) {
     { name: 'Object_32', material: materials.lambert7SG },
   ];
 
+  // Creando el plano de colisión (el piso)
+  const [ref] = usePlane(() => ({
+    rotation: [-Math.PI / 2, 0, 0],  // Coloca el plano horizontal
+    position: [0, -2, 0],  // Ajusta la posición del piso (puedes cambiar la altura)
+    args: [100, 100],  // Tamaño del plano (ajustable)
+  }));
+
   return (
     <group {...props} dispose={null}>
-      <group name="Sketchfab_Scene">
+      <group name="Sketchfab_Scene" position={[0,-1.8,0]}>
         <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.5}>
           <group name="Finished_workobjcleanermaterialmergergles">
             {meshes.map(({ name, material }) => (
@@ -55,8 +63,16 @@ export function Model2Soil4(props) {
           </group>
         </group>
       </group>
+
+      {/* Piso con colisión */}
+      <mesh ref={ref} receiveShadow>
+        <planeGeometry args={[10, 10]} />  {/* Asegúrate de ajustar el tamaño */}
+        <meshStandardMaterial color="gray" />
+      </mesh>
     </group>
   );
 }
+
 export default Model2Soil4;
+
 useGLTF.preload('/model3D/aprende.glb');

@@ -10,6 +10,8 @@ import { Physics } from "@react-three/cannon";
 
 import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
 import ModelPajaroMap from "./model3D/ModelPajaro_map";
+import PostProcessing from "../../../../posprocesado/posprocesado";
+
 
 const Map = () => {
   // Funciones de redirección
@@ -41,10 +43,14 @@ const Map = () => {
             </Physics>
 
             <ModelMapSoil3D position={[-90,-20, -40]}  />
+
+
             <ModelPajaroMap/>
 
             {/* Controles de cámara */}
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+
+            <PostProcessing/>
           </Canvas>
         </div>
       </div>
