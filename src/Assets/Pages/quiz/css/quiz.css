@@ -1,0 +1,113 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  h1, h2, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Contenedor principal del quiz */
+  .quiz-container {
+    max-width: 900px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+  }
+  
+  /* Encabezado del quiz */
+  .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .quiz-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #6d4c41;
+    text-align: center;
+  }
+  
+  .quiz-score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* Preguntas del quiz */
+  .quiz-question h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  /* Opciones del quiz */
+  .quiz-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .quiz-option {
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .quiz-option:hover {
+    background-color: #6d4c41;
+    color: #fff;
+  }
+  
+  /* Resumen del quiz */
+  .quiz-summary {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .quiz-summary h2 {
+    font-size: 28px;
+    color: #6d4c41;
+    margin-bottom: 20px;
+  }
+  
+  .quiz-summary p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .quiz-summary ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .quiz-summary li {
+    font-size: 16px;
+    color: #444;
+  }
+  
