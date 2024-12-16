@@ -11,6 +11,7 @@ import { Physics } from "@react-three/cannon";
 import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
 import ModelPajaroMap from "./model3D/ModelPajaro_map";
 import PostProcessing from "../../../../posprocesado/PostProcessing";
+import ModelMapManagement3D from "./model3D/ModelMapManagement3D";
 
 
 
@@ -50,6 +51,8 @@ const Map = () => {
 
             {/* Controles de cámara */}
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+
+            <ModelMapManagement3D  />
 
             <PostProcessing/>
           </Canvas>
