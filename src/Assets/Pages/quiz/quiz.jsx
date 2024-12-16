@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../Header/Header";
 import "./css/quiz.css";
-import MusicaAmbient from "../Music/Music_Soil/Pag2";
+
 
 
 const Home = () => {
@@ -102,7 +102,7 @@ const Home = () => {
   return (
     <>
       <Header />
-    <MusicaAmbient2/> 
+ 
       <div className="quiz-container">
         <div className="quiz-header">
           <h1 className="quiz-title">Quiz</h1>
