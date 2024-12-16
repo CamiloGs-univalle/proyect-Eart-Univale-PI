@@ -11,6 +11,7 @@ const Erosion2 = () => {
     return (
         <div>
             <Header />
+            <MusicaAmbient/>
             <div className="section">
                 {Agua}
 

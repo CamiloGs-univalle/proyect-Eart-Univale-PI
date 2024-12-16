@@ -9,6 +9,8 @@ import Factory from "../models/Factory3d";
 import Barrel from "../models/Barrel3D";
 import Text3D from "../2D/3D/Title3d";
 import Text2D from "../2D/TypesModel1"
+import PostProcessing from "../../../../../../posprocesado/PostProcessing";
+import MusicaAmbient from "../../../../Music/Music_Soil/Pag2";
 
 const Types = () => {
   const [content, setContent] = useState(
@@ -31,7 +33,7 @@ const Types = () => {
     <>
       <Header />
 
-
+<MusicaAmbient/>
 
       <div className="page-container">
         <Canvas
@@ -129,6 +131,7 @@ const Types = () => {
               </mesh>
             </RigidBody>
           </Physics>
+          <PostProcessing/>
         </Canvas>
 
       </div>

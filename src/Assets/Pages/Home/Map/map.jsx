@@ -10,7 +10,8 @@ import { Physics } from "@react-three/cannon";
 
 import ModelMapSoil3D from "./model3D/ModelMapSoil3D";
 import ModelPajaroMap from "./model3D/ModelPajaro_map";
-import PostProcessing from "../../../../posprocesado/posprocesado";
+import PostProcessing from "../../../../posprocesado/PostProcessing";
+
 
 
 const Map = () => {

@@ -11,6 +11,7 @@ import ModelCoin3D from "../../coin/ModelCoin3D";
 import Model2Anima1 from "../../model/Model2Anima1";
 import { useRef, useState } from "react";
 import { Jinosauro } from "../../model/jinosauro";
+import PostProcessing from "../../../../../../../posprocesado/PostProcessing";
 
 
 
@@ -93,6 +94,8 @@ export const model2canvauno = (
                 <Model2Anima1 />
             </Physics>
             <ModelCoin3D />
+
+            <PostProcessing/>
         </Canvas>
     </div>
 );
@@ -127,6 +130,8 @@ export const model2canvados = (
                     <Model2Soil2 position={[0, -70, 0]} />
                 </Debug>
             </Physics>
+
+            <PostProcessing/>
         </Canvas>
     </div>
 );
@@ -162,6 +167,7 @@ export const model2canvatres = (
                     <Model2Soil3 position={[0, 0, 0]} />
                 </Debug>
             </Physics>
+            <PostProcessing/>
         </Canvas>
     </div>
 );
@@ -172,7 +178,7 @@ export const model2canvacuatro = (
     <div className="model2-conteiner4">
         <Canvas
             shadows
-            camera={{ position: [0, 100, 7], fov: 90 }}
+            camera={{ position: [0, 10, 7], fov: 90 }}
         >
             <OrbitControls />
 
@@ -198,10 +204,10 @@ export const model2canvacuatro = (
                 <Debug color="blue">
                     <Model2Soil4 position={[0, 1, 0]} />
                 </Debug>
-                <FollowDinosaur />
+            
 
             </Physics>
-
+            <PostProcessing/>
 
         </Canvas>
     </div>

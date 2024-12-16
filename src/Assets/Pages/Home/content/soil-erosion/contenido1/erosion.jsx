@@ -4,18 +4,17 @@ import { erosion, infoErosion, infoTiposErosion } from "./Contenido";
 import { model1canvados, model1canvauno } from "./modelocanvas/ModelsCanvas";
 import Header from "../../../../Header/Header";
 import { Link } from "react-router-dom";
-import MusicaAmbient from "../../../../Music/Music_Soil/Pag2";
-import ScenaCoin from "../Quiz/ScenaCoin";
 
 import ScoreBoard from "../Quiz/ScoreBoard";
-import { MarcadorProvider } from "../Quiz/MarcadorContext";
+import { MusicaAmbient } from "../../../../Music/Music_Soil/Pag2";
+
 
 
 const Erosion = () => {
     return (
         <div>
             <Header />
-
+            {MusicaAmbient}
             <div className="primeraParte">
                 {erosion}
             </div>

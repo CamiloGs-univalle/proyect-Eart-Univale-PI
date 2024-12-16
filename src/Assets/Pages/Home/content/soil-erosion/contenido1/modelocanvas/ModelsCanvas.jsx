@@ -14,6 +14,7 @@ import ModelCoin3D from "../../coin/ModelCoin3D";
 import ScenaCoin from "../../Quiz/ScenaCoin";
 import ScoreBoard from "../../Quiz/ScoreBoard";
 import Model1Rock3 from "../../model/Model1Rock3";
+import PostProcessing from "../../../../../../../posprocesado/PostProcessing";
 
 
 
@@ -123,6 +124,7 @@ export const model1canvauno = (
                 onCollect={() => console.log("¡Moneda recogida! siuuu")}
             
             />
+            <PostProcessing/>
 
         </Canvas>
 
@@ -165,7 +167,7 @@ export const model1canvados = (
             </Physics>
             {/* Moneda */}
             
-
+            <PostProcessing/>
         </Canvas>
        
 

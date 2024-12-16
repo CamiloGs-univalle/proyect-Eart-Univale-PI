@@ -182,7 +182,7 @@ export function Model2Anima1(props) {
                         textAlign='center'
                     >
 
-                        Desgaste natural del suelo ⛈️
+                       Hola, preciona para mayor informacion
                     </Text>
 
                 </group>

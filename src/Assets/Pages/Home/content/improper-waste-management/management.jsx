@@ -7,6 +7,8 @@ import "./css/management.css";
 import City3d from "./models/City3d";
 import Citytext from "./models/title-city";
 import Person from "./models/HumanA3d";
+import PostProcessing from "../../../../../posprocesado/PostProcessing";
+import MusicaAmbient from "../../../Music/Music_Soil/Pag2";
 
 const Management = () => {
     const navigate = useNavigate();
@@ -24,6 +26,7 @@ const Management = () => {
     return (
         <>
             <Header />
+<MusicaAmbient/>
 
             <div className="title-text">Manejo inadecuado de residuos</div>
 
@@ -75,6 +78,7 @@ const Management = () => {
                     <City3d castShadow receiveShadow />
                     <Citytext />
                     <Person />
+                    <PostProcessing/>
                 </Canvas>
             </div>
 
