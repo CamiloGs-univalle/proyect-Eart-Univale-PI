@@ -13,6 +13,7 @@ import { RigidBody, Physics } from "@react-three/rapier";
 import ModelCoin3D from "../../coin/ModelCoin3D";
 import ScenaCoin from "../../Quiz/ScenaCoin";
 import ScoreBoard from "../../Quiz/ScoreBoard";
+import Model1Rock3 from "../../model/Model1Rock3";
 
 
 
@@ -129,7 +130,7 @@ export const model1canvauno = (
 
 export const model1canvados = (
     <div className="tierragrieta2">
-    
+
         <Canvas shadows camera={{ position: [0, 20, 50], fov: 60 }}>
             <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
             <ambientLight intensity={0.3} color="#ffffff" />
@@ -149,8 +150,13 @@ export const model1canvados = (
                 </RigidBody>
 
                 {/* Roca 2 */}
-                <RigidBody colliders="hull" position={[-20, 0, 40]} restitution={0.5} friction={0.7}>
+                <RigidBody colliders="hull" position={[-5, 0, 40]} restitution={0.5} friction={0.7}>
                     <Model1Rock2 />
+                </RigidBody>
+
+                {/* Roca 3 */}
+                <RigidBody colliders="hull" position={[-20, 0, -30]} restitution={0.5} friction={0.7}>
+                    <Model1Rock3 />
                 </RigidBody>
 
             </Physics>
