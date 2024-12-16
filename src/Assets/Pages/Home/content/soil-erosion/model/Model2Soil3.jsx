@@ -1,10 +1,56 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 
 export function Model2Soil3(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/model3D/agricu.glb');
   const { actions } = useAnimations(animations, group);
+
+  // Estados para el comportamiento de caminar y detenerse
+  const [isMoving, setIsMoving] = useState(false);
+  const [angle, setAngle] = useState(0); // Ángulo actual en el círculo
+  const [radius] = useState(10); // Radio del círculo (puedes modificarlo para cambiar el tamaño)
+
+  // Incremento del ángulo por frame
+  const angleIncrement = 0.02; // Ajusta este valor para cambiar la velocidad de giro
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsMoving((prev) => !prev); // Alterna entre caminar y detenerse
+    }, 3000); // Cambia cada 3 segundos
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Actualizar posición y rotación en círculo si está en movimiento
+  useEffect(() => {
+    let animationFrame;
+
+    const move = () => {
+      if (isMoving) {
+        setAngle((prevAngle) => prevAngle + angleIncrement); // Incrementa el ángulo
+      }
+      animationFrame = requestAnimationFrame(move);
+    };
+
+    move();
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isMoving, angleIncrement]);
+
+  // Calcular posición y rotación en el círculo basado en el ángulo
+  const x = Math.cos(angle) * radius;
+  const z = Math.sin(angle) * radius;
+  const rotationY = Math.PI / 2 - angle; // Ajustar la rotación para que mire hacia la dirección del movimiento
+
+  // Reproducir o detener la animación según el estado de movimiento
+  useEffect(() => {
+    if (isMoving) {
+      actions["Presentation"]?.play();
+    } 
+  }, [isMoving, actions]);
+
+  console.log(animations); // animartion
 
   return (
     <group ref={group} {...props} dispose={null}>

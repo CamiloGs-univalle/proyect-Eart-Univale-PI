@@ -121,9 +121,12 @@ export const model1canvauno = (
             <ModelCoin3D
                 position={[5, 10, -10]}
                 onCollect={() => console.log("¡Moneda recogida! siuuu")}
+            
             />
 
         </Canvas>
+
+        
     </div>
 );
 
@@ -161,12 +164,10 @@ export const model1canvados = (
 
             </Physics>
             {/* Moneda */}
-            <ModelCoin3D
-                position={[5, 10, -10]}
-                onCollect={() => console.log("¡Moneda recogida! siuuu")}
-            />
+            
 
         </Canvas>
+       
 
     </div>
 );
